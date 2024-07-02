@@ -1,0 +1,52 @@
+<div class="w-screen h-screen relative">
+
+  <div class="absolute left-0 top-0 right-0 bottom-auto z-0 w-full h-full bg-cover bg-center bg-no-repeat brightness-75">
+    <img
+      class="w-full h-full object-cover"
+      src="{{ section.settings.hero_background | img_url: 'master'  }}"
+      alt="{{ section.settings.hero_background.alt | escape }}">
+  </div>
+
+  <div class="absolute left-0 top-0 right-0 bottom-auto z-10 w-full h-full p-8 flex items-end justify-start">
+    <div class="w-full h-auto flex flex-row">
+      <div class="w-auto h-auto text-white flex-1">
+        <h1 class="text-6xl leading-relaxed">{{ section.settings.hero_heading }}</h1>
+        <p class="text-sm leading-relaxed">{{ section.settings.hero_subheading }}</p>
+      </div>
+      <div class="w-auto h-auto">
+        <img
+          class="w-150 h-150 object-cover"
+          src="{{ section.settings.hero_banner_logo | img_url: 'master'  }}"
+          alt="{{ section.settings.hero_banner_logo.alt | escape }}">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "hero-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_background",
+        "label": "Hero Image"
+      }, {
+        "type": "text",
+        "id": "hero_heading",
+        "label": "Hero Heading",
+        "default": "Adriana.tex d.o.o"
+      }, {
+        "type": "text",
+        "id": "hero_subheading",
+        "label": "Hero Subheading",
+        "default": "Ruma, Serbia"
+      }, {
+        "type": "image_picker",
+        "id": "hero_banner_logo",
+        "label": "Hero Logo"
+      }
+    ]
+  }
+{% endschema %}
