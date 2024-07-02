@@ -1,0 +1,52 @@
+<div class="w-screen h-screen relative">
+
+  <!-- Sfondo con immagine -->
+  <div class="absolute left-0 top-0 right-0 bottom-0 z-0 bg-cover bg-center bg-no-repeat brightness-75">
+    <img class="w-full h-full object-cover" src="{{ section.settings.hero_background | img_url: 'master' }}" alt="{{ section.settings.hero_background.alt | escape }}">
+  </div>
+
+  <!-- Contenitore per il titolo e sottotitolo -->
+  <div class="absolute left-8 bottom-8 z-10 text-left">
+    <h1 class="text-6xl leading-relaxed">{{ section.settings.hero_heading }}</h1>
+    <p class="text-sm leading-relaxed">{{ section.settings.hero_subheading }}</p>
+  </div>
+  
+</div>
+
+{% schema %}
+    {
+      "name": "hero-section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "hero_background",
+          "label": "Sfondo Hero",
+          "info": "Seleziona un'immagine per lo sfondo dell'hero."
+        },
+        {
+          "type": "text",
+          "id": "hero_heading",
+          "label": "Titolo Hero",
+          "default": "Benvenuto nel nostro negozio",
+          "info": "Inserisci il titolo principale per l'hero."
+        },
+        {
+          "type": "text",
+          "id": "hero_subheading",
+          "label": "Sottotitolo Hero",
+          "default": "Scopri le nostre offerte speciali",
+          "info": "Inserisci un breve sottotitolo per l'hero."
+        }
+      ],
+      "presets": [
+        {
+          "name": "Hero Section",
+          "category": "Sections",
+          "settings": {
+            "background": "#f8f8f8"
+          }
+        }
+      ]
+    }
+    {% endschema %}
+    
