@@ -662,6 +662,11 @@ video {
   row-gap: 1rem;
 }
 
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
