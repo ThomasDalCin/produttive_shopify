@@ -1,4 +1,3 @@
-
 {
   "sections": {
     "hero-section": {
@@ -9,9 +8,14 @@
         "hero_subheading": "Ruma, Serbia",
         "hero_banner_logo": "shopify:\/\/shop_images\/scroll-down.png"
       }
+    },
+    "column-featured": {
+      "type": "column-featured",
+      "settings": {}
     }
   },
   "order": [
-    "hero-section"
+    "hero-section",
+    "column-featured"
   ]
 }
