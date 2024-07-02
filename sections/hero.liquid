@@ -1,19 +1,18 @@
 <div class="w-screen h-screen relative">
 
-  <!-- Sfondo con immagine -->
-  <div class="w-full h-full absolute left-0 top-0 right-0 bottom-0 z-0 bg-cover bg-center bg-no-repeat brightness-75">
+  <div class="w-full h-full absolute left-0 top-0 right-0 bottom-0 z-0 brightness-75">
     <img
       class="w-full h-full object-cover"
       src="{{ section.settings.hero_background | img_url: 'master' }}"
       alt="{{ section.settings.hero_background.alt | escape }}">
   </div>
 
-  <!-- Contenitore per il titolo e sottotitolo -->
   <div class="w-full h-full  absolute left-0 top-0 right-0 bottom-0 z-10 flex items-end justify-start p-8">
     <div class="flex flex-row w-full h-auto">
       <div class="text-white flex-1">
         <h1 class="text-6xl leading-relaxed">{{ section.settings.hero_heading }}</h1>
         <p class="text-sm leading-relaxed">{{ section.settings.hero_subheading }}</p>
+        <p>ciao</p>
         <p>ciao</p>
       </div>
       <div>
