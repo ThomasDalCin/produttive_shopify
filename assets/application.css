@@ -654,6 +654,14 @@ video {
   row-gap: 2rem;
 }
 
+.gap-y-12 {
+  row-gap: 3rem;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -701,6 +709,15 @@ video {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .italic {
