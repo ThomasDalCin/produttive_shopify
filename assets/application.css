@@ -618,6 +618,10 @@ video {
   width: 100vw;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -659,6 +663,16 @@ video {
   padding: 2rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
@@ -677,6 +691,16 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .italic {
