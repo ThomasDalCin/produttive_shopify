@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "hero-section": {
@@ -11,15 +20,36 @@
     },
     "column-featured": {
       "type": "column-featured",
+<<<<<<< HEAD
       "settings": {}
     },
     "events": {
       "type": "events",
       "settings": {}
+=======
+      "settings": {
+        "section_heading": "Company",
+        "column_heading_first": "About Us",
+        "column_heading_second": "Our People",
+        "column_text_first": "Founded in 2012 in Ruma, in the autonomous province of Vojvodina, Adriana.tex has been operating at full capacity since 2015, primarily producing swimwear. The well-organized structure allows for the creation of jobs for local people and efficiency in production and waste management activities.",
+        "column_text_second": "For employees, daily transportation to and from the facility is organized and provided free of charge by the company. Additionally, the factory operates on a single work shift, with the workday ending at 2 PM, allowing employees to have free time for themselves and their families. Thanks to the services offered and effective organization, Adriana.tex has been recognized as a reliable employer by the Srem District (the area where the company is located)."
+      }
+    },
+    "column_featured_FmdYV4": {
+      "type": "column-featured",
+      "settings": {
+        "section_heading": "Benefits",
+        "column_heading_first": "Employees",
+        "column_heading_second": "Community",
+        "column_text_first": "The factory offers a wide range of bonuses to all its employees: from free transport to the creation of low-interest loans for the purchase of a home or vehicle, as well as free counselling services, basic and further training courses. In addition, all employees are guaranteed free breakfast and lunch at a symbolic price. The meritocracy that governs employee assessment is a central feature of personnel management, and aims to reward the most deserving workers with wage increases and annual bonuses, as well as developing in-company career paths.",
+        "column_text_second": "Adriana.tex provides employment opportunities for those without experience in the industry. Local individuals who join the Group undergo specific training and receive guidance from more experienced colleagues. The facility ensures economic security and opportunities for growth for all employees, allowing them to progress to important roles."
+      }
+>>>>>>> e4abb31f4e67d09786ffffd6e0e5e28a7feb9f13
     }
   },
   "order": [
     "hero-section",
-    "column-featured"
+    "column-featured",
+    "column_featured_FmdYV4"
   ]
 }
