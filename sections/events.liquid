@@ -28,9 +28,12 @@
           <div class="w-full h-200 flex flex-row gap-x-4">
             {% assign event_images = "event_image_1,event_image_2,event_image_3,event_image_4" | split: ',' %}
             {% for image in event_images %}
-              {% assign image_url = block.settings[image] %}
+              {% assign image_url = block.settings[image] | img_url: 'master' %}
               {% if image_url %}
-                <img src="{{ image_url }}" class="object-cover h-full w-full" alt="Event Image {{ forloop.index }}">
+                <img
+                  src="{{ image_url }}"
+                  class="object-cover h-full flex-1"
+                  alt="Event Image {{ forloop.index }}">
               {% endif %}
             {% endfor %}
           </div>
