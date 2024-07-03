@@ -38,7 +38,7 @@
         "id": "section_heading",
         "label": "Titolo sezione",
         "default": "Events",
-        "info": "Inserisci qui il titolo della sezione"
+        "info": "Inserisci qui il titolo della sezione."
       }
     ],
     "blocks": [
@@ -47,7 +47,22 @@
         "name": "Old Events"
       }, {
         "type": "oncoming_events",
-        "name": "Oncoming Events"
+        "name": "Oncoming Events",
+        "settings": [
+          {
+            "type": "text",
+            "id": "event_date",
+            "label": "Data evento",
+            "default": "26/06/2024",
+            "info": "Inserisci qui la data dell'evento."
+          }, {
+            "type": "textarea",
+            "id": "event_description",
+            "label": "Descrizione evento",
+            "default": "Lorem Ipsum....",
+            "info": "Inserisci qui la descrizione dell'evento."
+          }
+        ]
       }
     ],
     "presets": [
