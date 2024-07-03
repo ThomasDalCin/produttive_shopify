@@ -5,9 +5,21 @@
 
   {% for block in section.blocks %}
     {% if block.type == 'old_events' %}
-      <div class="w-full h-auto relative bg-bg-secondary">
+      <div class="w-full h-auto relative bg-bg-secondary flex flex-col gap-y-8 p-8">
         <h2 class="absolute right-0 top-0 text-3xl font-bold uppercase">Relive our Events</h2>
+        <div class="flex items-start justify-start">
+          <div class="flex flex-1 h-auto">
+            <h2 class="text-3xl">{{ block.settings.event_title }}</h2>
+          </div>
+          <div class="w-auto h-auto">
+            {% render 'arrow-up' %}
+          </div>
+        </div>
+        <div class="flex items-start justify-start">
+          <p class="text-base">{{ block.settings.event_description }}</p>
+        </div>
       </div>
+
     {% elsif block.type == 'oncoming_events' %}
       <div class="w-full h-auto relative bg-bg-secondary flex flex-col gap-y-8 p-8">
         <h2 class="absolute right-0 top-0 text-3xl font-bold uppercase">Save the date</h2>
@@ -71,6 +83,12 @@
         "name": "Oncoming Events",
         "settings": [
           {
+            "type": "text",
+            "id": "event_title",
+            "label": "Titolo evento",
+            "default": "Christmas Dinner 2023",
+            "info": "Inserisci qui il titolo dell'evento."
+          }, {
             "type": "text",
             "id": "event_date",
             "label": "Data evento",
