@@ -18,8 +18,15 @@
         <div class="flex items-start justify-start">
           <p class="text-base">{{ block.settings.event_description }}</p>
         </div>
-        <div class="flex items-start justify-start">
-         <div class="w-full h-500"></div>
+        <div class="flex items-start justify-start h-auto w-full flex-col gap-y-8 ">
+          <div class="w-full h-500">
+            <img
+              class="w-full h-full object-cover object-center"
+              src="{{ block.settings.event_image | img_url: 'master' }}"
+              alt="{{ block.settings.event_image.alt | escape }}">
+          </div>
+          <div class="w-full h-200 flex flex-row gap-x-4">
+          </div>
         </div>
       </div>
 
@@ -85,6 +92,12 @@
             "label": "Descrizione evento",
             "default": "Lorem Ipsum....",
             "info": "Inserisci qui la descrizione dell'evento."
+          },
+          {
+            "type": "image_picker",
+            "id": "event_image",
+            "label": "Immagine evento",
+            "info": "Inserisci l'immagine principale dell'evento."
           }
         ]
       }, {

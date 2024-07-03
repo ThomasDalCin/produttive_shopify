@@ -13,6 +13,9 @@ module.exports = {
         'bg-secondary': '#D3CCC2',
       },
       height: {
+        '200': '200px',
+        '300': '300px',
+        '400': '400px',
         '500': '500px',
         '600': '600px',
         '700': '700px',
