@@ -1,50 +1,48 @@
 <div class="w-full h-auto p-8 flex flex-col gap-y-12">
-
   <div class="w-full h-auto flex justify-start items-start p-4">
     <h2 class="text-5xl">{{ section.settings.section_heading }}</h2>
   </div>
 
   {% for block in section.blocks %}
-
     {% if block.type == 'old_events' %}
       <div class="w-full h-auto relative bg-secondary">
         <h2 class="absolute right-0 top-0 text-2xl">Relive our Events</h2>
       </div>
-
     {% elsif block.type == 'oncoming_events' %}
       <div class="w-full h-auto relative bg-secondary">
         <h2 class="absolute right-0 top-0 text-2xl">Save the date</h2>
       </div>
     {% endif %}
-
   {% endfor %}
-
 </div>
 
-
 {% schema %}
-  {
-    "name": "events",
-    "settings": [
-      {
-        "type": "text",
-        "id": "section_heading",
-        "label": "Titolo sezione",
-        "default": "Events",
-        "info": "Inserisci qui il titolo della sezione"
-      }
-    ],
-    "max_blocks": 6,
-    "blocks": [
-      {
-        "name": "old_events",
-        "type": "old_events",
-        "settings": [{}]
-      }, {
-        "name": "oncoming_events",
-        "type": "oncoming_events",
-        "settings": [{}]
-      }
-    ]
-  }
+{
+  "name": "events",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Titolo sezione",
+      "default": "Events",
+      "info": "Inserisci qui il titolo della sezione"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "old_events",
+      "name": "Old Events"
+    },
+    {
+      "type": "oncoming_events",
+      "name": "Oncoming Events"
+    }
+  ],
+  "presets": [
+    {
+      "name": "events",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
