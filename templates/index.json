@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "hero-section": {
@@ -39,10 +48,23 @@
             "event_place": "Subotica",
             "event_description": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.."
           }
+        },
+        "old_events_LTMxcN": {
+          "type": "old_events",
+          "settings": {
+            "event_title": "Christmas Dinner 2023",
+            "event_description": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content..",
+            "event_image": "shopify:\/\/shop_images\/Rectangle_20.png",
+            "event_image_1": "shopify:\/\/shop_images\/Rectangle_25.png",
+            "event_image_2": "shopify:\/\/shop_images\/Rectangle_26.png",
+            "event_image_3": "shopify:\/\/shop_images\/Rectangle_27.png",
+            "event_image_4": "shopify:\/\/shop_images\/Rectangle_25.png"
+          }
         }
       },
       "block_order": [
-        "oncoming_events_yeRxPa"
+        "oncoming_events_yeRxPa",
+        "old_events_LTMxcN"
       ],
       "settings": {
         "section_heading": "Events"
