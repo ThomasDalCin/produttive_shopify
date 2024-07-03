@@ -676,6 +676,11 @@ video {
   row-gap: 2rem;
 }
 
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
 .bg-bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(168 154 140 / var(--tw-bg-opacity));
