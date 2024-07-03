@@ -3,7 +3,8 @@ module.exports = {
   content: [
     './layout/*.liquid',
     './sections/*.liquid',
-    './templates/*.liquid'
+    './templates/*.liquid',
+    './snippets/*.liquid'
   ],
   theme: {
     extend: {
