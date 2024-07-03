@@ -26,6 +26,13 @@
               alt="{{ block.settings.event_image.alt | escape }}">
           </div>
           <div class="w-full h-200 flex flex-row gap-x-4">
+            {% assign event_images = "event_image_1,event_image_2,event_image_3,event_image_4" | split: ',' %}
+            {% for image in event_images %}
+              {% assign image_url = block.settings[image] %}
+              {% if image_url %}
+                <img src="{{ image_url }}" class="object-cover h-full w-full" alt="Event Image {{ forloop.index }}">
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -74,30 +81,52 @@
             "label": "Titolo evento",
             "default": "Christmas Dinner 2023",
             "info": "Inserisci qui il titolo dell'evento."
-          }, {
+          },
+          {
             "type": "text",
             "id": "event_date",
             "label": "Data evento",
             "default": "26/06/2024",
             "info": "Inserisci qui la data dell'evento."
-          }, {
+          },
+          {
             "type": "text",
             "id": "event_place",
             "label": "Luogo evento",
             "default": "Subotica",
             "info": "Inserisci qui il luogo dell'evento."
-          }, {
+          },
+          {
             "type": "textarea",
             "id": "event_description",
             "label": "Descrizione evento",
             "default": "Lorem Ipsum....",
             "info": "Inserisci qui la descrizione dell'evento."
-          },
-          {
+          }, {
             "type": "image_picker",
             "id": "event_image",
             "label": "Immagine evento",
             "info": "Inserisci l'immagine principale dell'evento."
+          }, {
+            "type": "image_picker",
+            "id": "event_image_1",
+            "label": "Raccolta Immagine",
+            "info": "Inserisci altre immagini all'evento."
+          }, {
+            "type": "image_picker",
+            "id": "event_image_2",
+            "label": "Raccolta Immagine",
+            "info": "Inserisci altre immagini all'evento."
+          }, {
+            "type": "image_picker",
+            "id": "event_image_3",
+            "label": "Raccolta Immagine",
+            "info": "Inserisci altre immagini all'evento."
+          }, {
+            "type": "image_picker",
+            "id": "event_image_4",
+            "label": "Raccolta Immagine",
+            "info": "Inserisci altre immagini all'evento."
           }
         ]
       }, {
