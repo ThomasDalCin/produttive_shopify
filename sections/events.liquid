@@ -6,43 +6,48 @@
   {% for block in section.blocks %}
     {% if block.type == 'old_events' %}
       <div class="w-full h-auto relative bg-bg-secondary">
-        <h2 class="absolute right-0 top-0 text-2xl">Relive our Events</h2>
+        <h2 class="absolute right-0 top-0 text-3xl font-bold uppercase">Relive our Events</h2>
       </div>
     {% elsif block.type == 'oncoming_events' %}
-      <div class="w-full h-auto relative bg-bg-secondary">
-        <h2 class="absolute right-0 top-0 text-2xl">Save the date</h2>
+      <div class="w-full h-auto relative bg-bg-secondary flex flex-col gap-y-8">
+        <h2 class="absolute right-0 top-0 text-3xl font-bold uppercase">Save the date</h2>
+        <div class="flex flex-row gap-x-4 items-start justify-center">
+          {% render 'calendar' %}
+        </div>
+        <div class="flex items-start justify-center">
+          <p class="text-base">{{  }}</p>
+        </div>
       </div>
     {% endif %}
   {% endfor %}
 </div>
 
 {% schema %}
-{
-  "name": "events",
-  "settings": [
-    {
-      "type": "text",
-      "id": "section_heading",
-      "label": "Titolo sezione",
-      "default": "Events",
-      "info": "Inserisci qui il titolo della sezione"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "old_events",
-      "name": "Old Events"
-    },
-    {
-      "type": "oncoming_events",
-      "name": "Oncoming Events"
-    }
-  ],
-  "presets": [
-    {
-      "name": "events",
-      "category": "Custom"
-    }
-  ]
-}
+  {
+    "name": "events",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Titolo sezione",
+        "default": "Events",
+        "info": "Inserisci qui il titolo della sezione"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "old_events",
+        "name": "Old Events"
+      }, {
+        "type": "oncoming_events",
+        "name": "Oncoming Events"
+      }
+    ],
+    "presets": [
+      {
+        "name": "events",
+        "category": "Custom"
+      }
+    ]
+  }
 {% endschema %}
