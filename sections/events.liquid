@@ -14,15 +14,15 @@
         <div class="flex flex-row gap-x-4 items-start justify-start">
           <div class="flex flex-row gap-x-2 items-start justify-start">
             {% render 'calendar' %}
-            <p class="text-base font-bold"></p>
+            <p class="text-base font-bold">{{ block.settings.event_date }}</p>
           </div>
           <div class="flex flex-row gap-x-2 items-start justify-start">
             {% render 'earth' %}
-            <p class="text-base font-bold"></p>
+            <p class="text-base font-bold">{{ block.settings.event_place }}</p>
           </div>
         </div>
         <div class="flex items-start justify-start">
-          <p class="text-base">{{  }}</p>
+          <p class="text-base">{{ block.settings.event_description }}</p>
         </div>
       </div>
     {% endif %}
@@ -53,6 +53,12 @@
             "default": "26/06/2024",
             "info": "Inserisci qui la data dell'evento."
           }, {
+            "type": "text",
+            "id": "event_place",
+            "label": "Luogo evento",
+            "default": "Subotica",
+            "info": "Inserisci qui il luogo dell'evento."
+          }, {
             "type": "textarea",
             "id": "event_description",
             "label": "Descrizione evento",
@@ -70,6 +76,12 @@
             "label": "Data evento",
             "default": "26/06/2024",
             "info": "Inserisci qui la data dell'evento."
+          }, {
+            "type": "text",
+            "id": "event_place",
+            "label": "Luogo evento",
+            "default": "Subotica",
+            "info": "Inserisci qui il luogo dell'evento."
           }, {
             "type": "textarea",
             "id": "event_description",
