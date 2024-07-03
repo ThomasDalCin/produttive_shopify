@@ -12,11 +12,11 @@
       <div class="w-full h-auto relative bg-bg-secondary flex flex-col gap-y-8 p-8">
         <h2 class="absolute right-0 top-0 text-3xl font-bold uppercase">Save the date</h2>
         <div class="flex flex-row gap-x-20 items-start justify-start">
-          <div class="flex flex-row gap-x-6 items-start justify-center">
+          <div class="flex flex-row gap-x-6 items-center justify-center">
             {% render 'calendar' %}
             <p class="text-base font-bold">{{ block.settings.event_date }}</p>
           </div>
-          <div class="flex flex-row gap-x-6 items-start justify-center">
+          <div class="flex flex-row gap-x-6 items-center justify-center">
             {% render 'earth' %}
             <p class="text-base font-bold">{{ block.settings.event_place }}</p>
           </div>
