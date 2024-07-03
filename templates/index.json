@@ -40,22 +40,6 @@
     },
     "events": {
       "type": "events",
-      "blocks": {
-        "oncoming_events_ViRWxF": {
-          "type": "oncoming_events",
-          "settings": {
-          }
-        },
-        "old_events_nYTN4R": {
-          "type": "old_events",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "oncoming_events_ViRWxF",
-        "old_events_nYTN4R"
-      ],
       "settings": {
         "section_heading": "Events"
       }
