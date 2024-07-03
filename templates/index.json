@@ -12,6 +12,10 @@
     "column-featured": {
       "type": "column-featured",
       "settings": {}
+    },
+    "events": {
+      "type": "events",
+      "settings": {}
     }
   },
   "order": [
