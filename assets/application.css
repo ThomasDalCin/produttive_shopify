@@ -663,6 +663,16 @@ video {
   row-gap: 1rem;
 }
 
+.bg-bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(168 154 140 / var(--tw-bg-opacity));
+}
+
+.bg-bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(211 204 194 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
