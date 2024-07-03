@@ -6,7 +6,7 @@
   {% for block in section.blocks %}
     {% if block.type == 'old_events' %}
       <div class="w-full h-auto relative bg-bg-secondary flex flex-col gap-y-8 p-8">
-        <h2 class="absolute right-0 top-0 text-3xl font-bold uppercase">Relive our Events</h2>
+        <h2 class="absolute right-0 -top-4 text-3xl font-bold uppercase">Relive our Events</h2>
         <div class="flex items-start justify-start">
           <div class="flex flex-1 h-auto">
             <h2 class="text-3xl">{{ block.settings.event_title }}</h2>
@@ -22,7 +22,7 @@
 
     {% elsif block.type == 'oncoming_events' %}
       <div class="w-full h-auto relative bg-bg-secondary flex flex-col gap-y-8 p-8">
-        <h2 class="absolute right-0 top-0 text-3xl font-bold uppercase">Save the date</h2>
+        <h2 class="absolute right-0 -top-4 text-3xl font-bold uppercase">Save the date</h2>
         <div class="flex flex-row gap-x-20 items-start justify-start">
           <div class="flex flex-row gap-x-6 items-center justify-center">
             {% render 'calendar' %}
