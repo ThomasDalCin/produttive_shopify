@@ -4,7 +4,21 @@
     <h2 class="text-5xl">{{ section.settings.section_heading }}</h2>
   </div>
 
-  <div class="w-full h-auto relative bg-secondary"></div>
+  {% for block in section.blocks %}
+
+    {% if block.type == 'old_events' %}
+      <div class="w-full h-auto relative bg-secondary">
+        <h2 class="absolute right-0 top-0 text-2xl">Relive our Events</h2>
+      </div>
+
+    {% elsif block.type == 'oncoming_events' %}
+      <div class="w-full h-auto relative bg-secondary">
+        <h2 class="absolute right-0 top-0 text-2xl">Save the date</h2>
+      </div>
+    {% endif %}
+
+  {% endfor %}
+
 </div>
 
 
@@ -18,6 +32,18 @@
         "label": "Titolo sezione",
         "default": "Events",
         "info": "Inserisci qui il titolo della sezione"
+      }
+    ],
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "name": "old_events",
+        "type": "old_events",
+        "settings": [{}]
+      }, {
+        "name": "oncoming_events",
+        "type": "oncoming_events",
+        "settings": [{}]
       }
     ]
   }
