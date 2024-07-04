@@ -18,21 +18,22 @@
         <div class="flex items-start justify-start">
           <p class="text-base">{{ block.settings.event_description }}</p>
         </div>
-        <div class="flex items-start justify-start h-auto w-full flex-col gap-y-8 ">
-          <div class="w-full h-500">
+        <div class="flex items-start justify-start h-auto w-full flex-col gap-y-8" id="content-images">
+          <div class="w-full h-600">
             <img
+              id="main-img"
               class="w-full h-full object-cover object-center"
               src="{{ block.settings.event_image | img_url: 'master' }}"
               alt="{{ block.settings.event_image.alt | escape }}">
           </div>
-          <div class="w-full h-200 flex flex-row gap-x-4">
+          <div class="w-full h-200 flex flex-row gap-x-4" id="container-images">
             {% assign event_images = "event_image_1,event_image_2,event_image_3,event_image_4" | split: ',' %}
             {% for image in event_images %}
               {% assign image_url = block.settings[image] | img_url: 'master' %}
               {% if image_url %}
                 <img
                   src="{{ image_url }}"
-                  class="object-cover h-full flex-1"
+                  class="object-cover h-full flex-1 cursor-pointer"
                   alt="Event Image {{ forloop.index }}">
               {% endif %}
             {% endfor %}
@@ -60,6 +61,40 @@
     {% endif %}
   {% endfor %}
 </div>
+
+<script>
+  //set images selections
+   const allImages = Array.from(document.getElementById('container-images').children);
+   const mainImg = document.getElementById('main-img');
+   allImages.forEach((image)=>{
+      image.addEventListener('click', (e) =>{
+        let mainSrc = mainImg.getAttribute('src');
+        let imgClicked = e.currentTarget;
+        let currentSrc = imgClicked.currentSrc;
+        if(mainSrc != currentSrc) {
+           mainImg.setAttribute('src', currentSrc)
+        } 
+      })
+   })
+  
+  //set hide/expand section
+  document.addEventListener('DOMContentLoaded', () => {
+      const content = document.getElementById('content-images');
+      const arrow = document.getElementById('arrow-up');
+  
+      const classes = ['flex', 'items-start', 'justify-start', 'h-auto', 'w-full', 'flex-col', 'gap-y-8'];
+      content.classList.remove(...classes);
+      content.classList.add('hidden');
+  
+      arrow.addEventListener('click', () => {
+        content.classList.toggle('hidden');
+        for(let i = 0; i < classes.length; i++){
+          content.classList.toggle(classes[i])
+        }
+        arrow.classList.toggle('rotate-180');
+      });
+    });
+</script>
 
 {% schema %}
   {
@@ -91,12 +126,14 @@
             "label": "Descrizione evento",
             "default": "Lorem Ipsum....",
             "info": "Inserisci qui la descrizione dell'evento."
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "event_image",
             "label": "Immagine evento",
             "info": "Inserisci l'immagine principale dell'evento."
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "event_image_1",
             "label": "Raccolta Immagine",
