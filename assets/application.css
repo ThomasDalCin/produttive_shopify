@@ -606,8 +606,8 @@ video {
   height: 200px;
 }
 
-.h-500 {
-  height: 500px;
+.h-600 {
+  height: 600px;
 }
 
 .h-auto {
@@ -620,10 +620,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-600 {
-  height: 600px;
 }
 
 .w-1\/2 {

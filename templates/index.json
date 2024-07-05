@@ -61,12 +61,17 @@
       "settings": {
         "section_heading": "Events"
       }
+    },
+    "testimonial": {
+      "type": "testimonial",
+      "settings": {}
     }
   },
   "order": [
     "hero-section",
     "column-featured",
     "column_featured_FmdYV4",
-    "events"
+    "events",
+    "testimonials"
   ]
 }
