@@ -97,122 +97,94 @@
 </script>
 
 {% schema %}
-{
-  "name": "events",
-  "settings": [
-    {
-      "type": "text",
-      "id": "section_heading",
-      "label": "Titolo sezione",
-      "default": "Events",
-      "info": "Inserisci qui il titolo della sezione."
-    }
-  ],
-  "blocks": [
-    {
-      "type": "old_events",
-      "name": "Old Events",
-      "settings": [
-        {
-          "type": "text",
-          "id": "event_title",
-          "label": "Titolo evento",
-          "default": "Christmas Dinner 2023",
-          "info": "Inserisci qui il titolo dell'evento."
-        },
-        {
-          "type": "textarea",
-          "id": "event_description",
-          "label": "Descrizione evento",
-          "default": "Lorem Ipsum....",
-          "info": "Inserisci qui la descrizione dell'evento."
-        },
-        {
-          "type": "image_picker",
-          "id": "event_image",
-          "label": "Immagine evento",
-          "info": "Inserisci l'immagine principale dell'evento."
-        },
-        {
-          "type": "image_picker",
-          "id": "event_image_1",
-          "label": "Raccolta Immagine",
-          "info": "Inserisci altre immagini all'evento."
-        },
-        {
-          "type": "image_picker",
-          "id": "event_image_2",
-          "label": "Raccolta Immagine",
-          "info": "Inserisci altre immagini all'evento."
-        },
-        {
-          "type": "image_picker",
-          "id": "event_image_3",
-          "label": "Raccolta Immagine",
-          "info": "Inserisci altre immagini all'evento."
-        },
-        {
-          "type": "image_picker",
-          "id": "event_image_4",
-          "label": "Raccolta Immagine",
-          "info": "Inserisci altre immagini all'evento."
-        }
-      ]
-    },
-    {
-      "type": "oncoming_events",
-      "name": "Oncoming Events",
-      "settings": [
-        {
-          "type": "text",
-          "id": "event_date",
-          "label": "Data evento",
-          "default": "26/06/2024",
-          "info": "Inserisci qui la data dell'evento."
-        },
-        {
-          "type": "text",
-          "id": "event_place",
-          "label": "Luogo evento",
-          "default": "Subotica",
-          "info": "Inserisci qui il luogo dell'evento."
-        },
-        {
-          "type": "textarea",
-          "id": "event_description",
-          "label": "Descrizione evento",
-          "default": "Lorem Ipsum....",
-          "info": "Inserisci qui la descrizione dell'evento."
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "events",
-      "settings": {
-        "section_heading": "Upcoming Events"
-      },
-      "blocks": [
-        {
-          "type": "old_events",
-          "settings": {
-            "event_title": "Spring Festival 2024",
-            "event_description": "Join us for a celebration of spring with music, food, and fun activities.",
-            "event_image": "link_to_spring_festival_image.jpg"
+  {
+    "name": "events",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Titolo sezione",
+        "default": "Events",
+        "info": "Inserisci qui il titolo della sezione."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "old_events",
+        "name": "Old Events",
+        "settings": [
+          {
+            "type": "text",
+            "id": "event_title",
+            "label": "Titolo evento",
+            "default": "Christmas Dinner 2023",
+            "info": "Inserisci qui il titolo dell'evento."
+          },
+          {
+            "type": "textarea",
+            "id": "event_description",
+            "label": "Descrizione evento",
+            "default": "Lorem Ipsum....",
+            "info": "Inserisci qui la descrizione dell'evento."
+          },
+          {
+            "type": "image_picker",
+            "id": "event_image",
+            "label": "Immagine evento",
+            "info": "Inserisci l'immagine principale dell'evento."
+          },
+          {
+            "type": "image_picker",
+            "id": "event_image_1",
+            "label": "Raccolta Immagine",
+            "info": "Inserisci altre immagini all'evento."
+          }, {
+            "type": "image_picker",
+            "id": "event_image_2",
+            "label": "Raccolta Immagine",
+            "info": "Inserisci altre immagini all'evento."
+          }, {
+            "type": "image_picker",
+            "id": "event_image_3",
+            "label": "Raccolta Immagine",
+            "info": "Inserisci altre immagini all'evento."
+          }, {
+            "type": "image_picker",
+            "id": "event_image_4",
+            "label": "Raccolta Immagine",
+            "info": "Inserisci altre immagini all'evento."
           }
-        },
-        {
-          "type": "oncoming_events",
-          "settings": {
-            "event_date": "10/04/2024",
-            "event_place": "Central Park",
-            "event_description": "A wonderful day to enjoy the beauty of spring."
+        ]
+      }, {
+        "type": "oncoming_events",
+        "name": "Oncoming Events",
+        "settings": [
+          {
+            "type": "text",
+            "id": "event_date",
+            "label": "Data evento",
+            "default": "26/06/2024",
+            "info": "Inserisci qui la data dell'evento."
+          }, {
+            "type": "text",
+            "id": "event_place",
+            "label": "Luogo evento",
+            "default": "Subotica",
+            "info": "Inserisci qui il luogo dell'evento."
+          }, {
+            "type": "textarea",
+            "id": "event_description",
+            "label": "Descrizione evento",
+            "default": "Lorem Ipsum....",
+            "info": "Inserisci qui la descrizione dell'evento."
           }
-        }
-      ]
-    }
-  ]
-}
-
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "events"
+      }
+    ]
+  }
 {% endschema %}
