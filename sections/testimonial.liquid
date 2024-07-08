@@ -5,21 +5,20 @@
         <img class="object-cover w-full h-full absolute z-0"
           src="{{ section.settings.testimonial_img_one | img_url: 'master' | default: 'assets/default_image_one.jpg' }}"
           alt="{{ section.settings.testimonial_img_one.alt | default: 'Default alt text for image one' }}">
-        <div class="flex flex-col absolute bottom-0 left-0 w-full p-4 text-left z-10" style="  background: linear-gradient(
-    rgba(0, 0, 0, 0.6),
-    rgba(72, 72, 72, 0.6),
-    rgba(102, 102, 102, 0.6)
-  );">
+        <div class="flex flex-col absolute bottom-0 left-0 w-full p-4 text-left z-10 gap-y-4"
+          style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(72, 72, 72, 0.6), rgba(102, 102, 102, 0.6));">
           <div class="flex flex-row w-full h-auto">
-            <div class="flex flex-col flex-1">
+            <div class="flex flex-col flex-1 gap-y-2">
               <h3 class="text-3xl text-white">{{ section.settings.testimonial_one }}</h3>
               <p class="text-base text-white">{{ section.settings.testimonial_role_one }}</p>
             </div>
-            <div class="flex w-auto h-auto justify-center items-center">
-              {% render 'arrow-up' class:'text-white' %}
+            <div class="flex w-auto h-auto justify-center items-center cursor-pointer">
+              {% render 'arrow-up' %}
             </div>
           </div>
-          <p class="text-base text-white">{{ section.settings.interview_text_one }}</p>
+          <div class="w-full h-0 overflow-hidden expandableContent">
+            <p class="text-base text-white">{{ section.settings.interview_text_one }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -29,26 +28,45 @@
         <img class="object-cover w-full h-full absolute z-0"
           src="{{ section.settings.testimonial_img_two | img_url: 'master' | default: 'assets/default_image_two.jpg' }}"
           alt="{{ section.settings.testimonial_img_two.alt | default: 'Default alt text for image two' }}">
-        <div class="flex flex-col absolute bottom-0 left-0 w-full p-4 text-left z-10" style="  background: linear-gradient(
-    rgba(0, 0, 0, 0.6),
-    rgba(72, 72, 72, 0.6),
-    rgba(102, 102, 102, 0.6)
-  );">
+        <div class="flex flex-col absolute bottom-0 left-0 w-full p-4 text-left z-10 gap-y-4"
+          style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(72, 72, 72, 0.6), rgba(102, 102, 102, 0.6));">
           <div class="flex flex-row w-full h-auto">
-            <div class="flex flex-col flex-1">
-              <h3 class="text-3xl text-white">{{ section.settings.testimonial_one }}</h3>
-              <p class="text-base text-white">{{ section.settings.testimonial_role_one }}</p>
+            <div class="flex flex-col flex-1 gap-y-2">
+              <h3 class="text-3xl text-white">{{ section.settings.testimonial_two }}</h3>
+              <p class="text-base text-white">{{ section.settings.testimonial_role_two }}</p>
             </div>
-            <div class="flex w-auto h-auto justify-center items-center">
-              {% render 'arrow-up' class:'text-white' %}
+            <div class="flex w-auto h-auto justify-center items-center cursor-pointer">
+              {% render 'arrow-up' %}
             </div>
           </div>
-          <p class="text-base text-white">{{ section.settings.interview_text_two }}</p>
+          <div  class="w-full h-0 overflow-hidden expandableContent">
+            <p class="text-base text-white">{{ section.settings.interview_text_two }}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<script>
+  const arrowIcons = document.querySelectorAll('.arrow-up');
+    arrowIcons.forEach((arrow) => {
+      arrow.addEventListener('click', (event) => {
+      const expandableContent = arrow.closest('.relative').querySelector('.expandableContent');
+      if (expandableContent) {
+        expandableContent.classList.toggle('h-auto');
+        expandableContent.classList.toggle('h-0');
+      } else {
+        console.log('Nessun elemento .expandableContent trovato vicino.');
+      }
+    });
+  });
+</script>
+
+
+
+
 
 {% schema %}
 {
