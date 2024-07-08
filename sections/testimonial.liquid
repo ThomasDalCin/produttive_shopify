@@ -1,6 +1,12 @@
 <div class="flex flex-col w-full h-auto p-8 gap-y-12">
   <div class="flex flex-row gap-x-8 p-4">
     <div class="w-1/2 flex justify-start items-start gap-y-4">
+      <div class="flex flex-row w-full h-auto">
+        <div class="container">
+          <h3 class="text-3xl">{{ section.settings.testimonial_one }}</h3>
+          <p class="text-base">{{ section.settings.testimonial_role_one }}</p>
+        </div>
+      </div>
       <div class="relative w-full h-500">
         <img
           class="object-cover w-full h-full absolute z-0"
@@ -13,6 +19,12 @@
     </div>
 
     <div class="w-1/2 flex justify-start items-start gap-y-4">
+      <div class="flex flex-row w-full h-auto">
+        <div class="container">
+          <h3 class="text-3xl">{{ section.settings.testimonial_two }}</h3>
+          <p class="text-base">{{ section.settings.testimonial_role_two }}</p>
+        </div>
+      </div>
       <div class="relative w-full h-500">
         <img
           class="object-cover w-full h-full absolute z-0"
@@ -27,42 +39,66 @@
 </div>
 
 {% schema %}
-{
-  "name": "testimonials",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "testimonial_img_one",
-      "label": "Immagine Testimonial",
-      "info": "Inserisci l'immagine dell'intervista"
-    },
-    {
-      "type": "image_picker",
-      "id": "testimonial_img_two",
-      "label": "Immagine Testimonial",
-      "info": "Inserisci l'immagine dell'intervista"
-    },
-    {
-      "type": "textarea",
-      "id": "interview_text_one",
-      "label": "Testo Testimonial",
-      "info": "Inserisci il testo dell'intervista"
-    },
-    {
-      "type": "textarea",
-      "id": "interview_text_two",
-      "label": "Testo Testimonial",
-      "info": "Inserisci il testo dell'intervista"
-    }
-  ],
-  "presets": [
-    {
-      "name": "testimonials",
-      "settings": {
-        "interview_text_one": "Questo è un esempio di testo per la prima intervista.",
-        "interview_text_two": "Questo è un esempio di testo per la seconda intervista."
+  {
+    "name": "testimonials",
+    "settings": [
+      {
+        "type": "text",
+        "id": "testimonial_one",
+        "label": "testimonial name",
+        "info": "Inserisci il nome del membr del team",
+        "default": "Branislav Opačić"
+      },
+      {
+        "type": "text",
+        "id": "testimonial_two",
+        "label": "testimonial name",
+        "info": "Inserisci il nome del membr del team",
+        "default": "Jelena JeŠić"
+      },
+      {
+        "type": "text",
+        "id": "testimonial_role_one",
+        "label": "testimonial role",
+        "info": "Inserisci il ruolo",
+        "default": "IT Admin"
+      },
+      {
+        "type": "text",
+        "id": "testimonial_role_two",
+        "label": "testimonial role",
+        "info": "Inserisci il ruolo",
+        "default": "line leader"
+      }, {
+        "type": "image_picker",
+        "id": "testimonial_img_one",
+        "label": "Immagine Testimonial",
+        "info": "Inserisci l'immagine dell'intervista"
+      }, {
+        "type": "image_picker",
+        "id": "testimonial_img_two",
+        "label": "Immagine Testimonial",
+        "info": "Inserisci l'immagine dell'intervista"
+      }, {
+        "type": "textarea",
+        "id": "interview_text_one",
+        "label": "Testo Testimonial",
+        "info": "Inserisci il testo dell'intervista"
+      }, {
+        "type": "textarea",
+        "id": "interview_text_two",
+        "label": "Testo Testimonial",
+        "info": "Inserisci il testo dell'intervista"
       }
-    }
-  ]
-}
+    ],
+    "presets": [
+      {
+        "name": "testimonials",
+        "settings": {
+          "interview_text_one": "Questo è un esempio di testo per la prima intervista.",
+          "interview_text_two": "Questo è un esempio di testo per la seconda intervista."
+        }
+      }
+    ]
+  }
 {% endschema %}
