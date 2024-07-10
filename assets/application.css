@@ -646,12 +646,12 @@ video {
   height: 0px;
 }
 
-.h-200 {
-  height: 200px;
+.h-10-percent {
+  height: 10%;
 }
 
-.h-50-percent {
-  height: 50%;
+.h-200 {
+  height: 200px;
 }
 
 .h-500 {
@@ -666,6 +666,10 @@ video {
   height: 800px;
 }
 
+.h-90-percent {
+  height: 90%;
+}
+
 .h-auto {
   height: auto;
 }
@@ -676,14 +680,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-90-percent {
-  height: 90%;
-}
-
-.h-10-percent {
-  height: 10%;
 }
 
 .w-1\/2 {
@@ -700,6 +696,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-800 {
+  width: 800px;
 }
 
 .flex-1 {
