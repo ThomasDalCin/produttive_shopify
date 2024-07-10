@@ -658,6 +658,10 @@ video {
   height: 600px;
 }
 
+.h-800 {
+  height: 800px;
+}
+
 .h-auto {
   height: auto;
 }
@@ -668,6 +672,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-50-percent {
+  height: 50%;
 }
 
 .w-1\/2 {

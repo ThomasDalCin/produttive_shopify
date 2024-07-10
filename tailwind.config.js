@@ -20,6 +20,7 @@ module.exports = {
         '600': '600px',
         '700': '700px',
         '800': '800px',
+        '50-percent': '50%'
       },
       screens: {
         'xs': '435px',
