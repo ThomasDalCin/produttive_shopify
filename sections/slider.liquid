@@ -4,7 +4,7 @@
             {% assign slider_imgs = "slider_img_one,slider_img_two,slider_img_three,slider_img_four" |  split: ',' %}
             {% for slider_img in slider_imgs  %}
                 {% assign slider_img_url = section.settings[slider_img] |  img_url: 'master' %}
-                <div class="w-800 w-min-800 h-full">
+                <div class="w-800 min-w-800 h-full">
                     <img class="object-cover w-full h-full" src="{{ slider_img_url }}"  alt="Slider Image {{ forloop.index }}">
                 </div>
             {% endfor %}

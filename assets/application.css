@@ -702,6 +702,10 @@ video {
   width: 100vw;
 }
 
+.min-w-800 {
+  min-width: 800px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
