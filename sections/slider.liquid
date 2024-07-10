@@ -5,7 +5,7 @@
             {% for slider_img in slider_imgs %}
             {% assign slider_img_url = section.settings[slider_img] | img_url: 'master' %}
             <div class="w-800 min-w-800 h-full slider-img transition-all ease duration-200">
-                <img class="object-cover w-full h-full" src="{{ slider_img_url }}"
+                <img class="object-fill w-full h-full" src="{{ slider_img_url }}"
                     alt="Slider Image {{ forloop.index }}">
             </div>
             {% endfor %}
