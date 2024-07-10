@@ -686,6 +686,10 @@ video {
   width: 50%;
 }
 
+.w-800 {
+  width: 800px;
+}
+
 .w-auto {
   width: auto;
 }
@@ -696,10 +700,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-800 {
-  width: 800px;
 }
 
 .flex-1 {
