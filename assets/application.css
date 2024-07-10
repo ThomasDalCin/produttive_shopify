@@ -650,6 +650,10 @@ video {
   height: 200px;
 }
 
+.h-50-percent {
+  height: 50%;
+}
+
 .h-500 {
   height: 500px;
 }
@@ -674,8 +678,8 @@ video {
   height: 100vh;
 }
 
-.h-50-percent {
-  height: 50%;
+.h-90-percent {
+  height: 90%;
 }
 
 .w-1\/2 {
