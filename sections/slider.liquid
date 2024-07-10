@@ -18,28 +18,33 @@
 </div>
 
 <script>
-    //get my elements
+    // Ottieni i miei elementi
     const arrows = Array.from(document.querySelectorAll('.arrow'));
     const slides = Array.from(document.querySelectorAll('.slider-img'));
-    //declare my variables
+
+    // Dichiara le mie variabili
     let currentXpos = 0;
+
     function moveSlider() {
         arrows.forEach((arrow, index) => {
             arrow.addEventListener('click', () => {
-                if (index % 2 == 0) {
+                if (index % 2 === 0) {
                     if (currentXpos < 0) {
-                        slides.forEach((slide) => {
-                            slide.style.transform = `translateX(${currentXpos + 100}%)`;
-                        })
-                    } else if (currentXpos <  -(slides.length - 1 * 100)){
-                        slides.forEach((slide) => {
-                            slide.style.transform = `translateX(${currentXpos - 100}%)`;
-                        })
+                        currentXpos += 100;
+                    }
+                } else {
+                    if (currentXpos > -((slides.length - 1) * 100)) {
+                        currentXpos -= 100;
                     }
                 }
-            })
-        })
+
+                slides.forEach((slide) => {
+                    slide.style.transform = `translateX(${currentXpos}%)`;
+                });
+            });
+        });
     }
+
     moveSlider();
 </script>
 
