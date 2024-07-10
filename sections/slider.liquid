@@ -5,7 +5,7 @@
             {% for slider_img in slider_imgs  %}
                 {% assign slider_img_url = section.settings[slider_img] |  img_url: 'master' %}
                 <div class="w-800 min-w-800 h-full">
-                    <img class="object-cover w-full h-full" src="{{ slider_img_url }}"  alt="Slider Image {{ forloop.index }}">
+                    <img class="object-cover w-full h-full slider-img" src="{{ slider_img_url }}"  alt="Slider Image {{ forloop.index }}">
                 </div>
             {% endfor %}
         </div>
@@ -19,7 +19,7 @@
 <script>
     //get my elements
     const arrows = Array.from(document.querySelectorAll('.arrow'));
-    const slides = document.querySelectorAll('img');
+    const slides = document.querySelectorAll('.slider-img');
 
     console.log(slides)
 </script>
