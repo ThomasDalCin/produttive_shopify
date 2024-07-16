@@ -1,16 +1,20 @@
-<div class="container h-auto flex items-start justify-center">
-    <div class="w-800 h-800 flex flex-col gap-y-8">
-        <div class="w-full h-90-percent flex flex-row overflow-hidden">
+<div class="container h-auto p-8 flex items-start justify-center">
+
+    <div class="w-full h-auto flex flex-col gap-y-4 sm:gap-y-8">
+        <div class="w-full h-500 flex flex-row overflow-hidden">
+
             {% assign slider_imgs = "slider_img_one,slider_img_two,slider_img_three,slider_img_four" | split: ',' %}
             {% for slider_img in slider_imgs %}
             {% assign slider_img_url = section.settings[slider_img] | img_url: 'master' %}
-            <div class="w-800 min-w-800 h-full slider-img transition-all ease duration-200">
-                <img class="object-fill w-full h-full" src="{{ slider_img_url }}"
+            <div class="w-full min-w-full h-full slider-img transition-all ease duration-200">
+                <img class="object-cover w-full h-full" src="{{ slider_img_url }}"
                     alt="Slider Image {{ forloop.index }}">
             </div>
             {% endfor %}
+
         </div>
-        <div class="w-full h-10-percent flex flex-row gap-x-4">
+
+        <div class="w-full h-auto flex flex-row gap-x-4">
             {% render 'arrow-left' %}
             {% render 'arrow-right' %}
         </div>
@@ -37,7 +41,6 @@
                         currentXpos -= 100;
                     }
                 }
-
                 slides.forEach((slide) => {
                     slide.style.transform = `translateX(${currentXpos}%)`;
                 });

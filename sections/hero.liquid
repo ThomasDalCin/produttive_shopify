@@ -8,19 +8,20 @@
   </div>
 
   <div class="w-full h-full  absolute left-0 top-0 right-0 bottom-0 z-10 flex items-end justify-start p-8">
+
     <div class="flex flex-row w-full h-auto">
       <div class="text-white flex-1">
-        <h1 class="text-6xl leading-relaxed">{{ section.settings.hero_heading }}</h1>
-        <p class="text-sm leading-relaxed">{{ section.settings.hero_subheading }}</p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl leading-relaxed">{{ section.settings.hero_heading }}</h1>
+        <p class="text-base leading-relaxed">{{ section.settings.hero_subheading }}</p>
       </div>
-      <div>
+      <div class="flex items-end justify-center sm:items-center">
         <img
-          class="object-cover"
-          style="width: 150px; height:140px"
+          class="object-contain w-16 h-16 sm:w-40 sm:h-40"
           src="{{ section.settings.hero_banner_logo| img_url: 'master' }}"
           alt="{{ section.settings.hero_banner_logo.alt | escape }}">
       </div>
     </div>
+    
   </div>
 
 </div>
