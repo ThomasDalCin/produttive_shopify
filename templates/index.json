@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "hero-section": {
@@ -22,12 +31,13 @@
     "quote": {
       "type": "quote",
       "settings": {
+        "quote_text": "“The people who work with us have always been our most invaluable resource, so a presentation of our factories would not be complete without hearing from them. Here are the stories of those who produce our items every day”"
       }
     },
     "slider": {
       "type": "slider",
       "settings": {
-        "slider_img_one": "shopify:\/\/shop_images\/Rectangle_20.png",
+        "slider_img_one": "shopify:\/\/shop_images\/Box_foto.jpg",
         "slider_img_two": "shopify:\/\/shop_images\/Rectangle_25.png",
         "slider_img_three": "shopify:\/\/shop_images\/Rectangle_23.png",
         "slider_img_four": "shopify:\/\/shop_images\/Rectangle_27.png"
