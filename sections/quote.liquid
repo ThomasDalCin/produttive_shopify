@@ -1,7 +1,22 @@
 <div class="container mx-auto">
-<div class="w-full h-auto p-4 flex items-center justify-center">
-    <div class="container p-y-8">
-        <h4></h4>
+    <div class="w-full h-auto p-4 flex items-center justify-center">
+        <div class="container p-y-8">
+            <h4 class="text-2xl italic">{{ section.settings.quote_text }}</h4>
+        </div>
     </div>
 </div>
-</div>
+
+{% schema %}
+{
+"name": "quote",
+"settings": [
+{
+"type": "textarea",
+"id": "quote_text",
+"label": "Quote sezione",
+"default": "“The people who work with us have always been our most invaluable resource, so a presentation of our factories would not be complete without hearing from them. Here are the stories of those who produce our items every day”",
+"info": "Inserisci qui la quote della sezione"
+}
+]
+}
+{% endschema %}
