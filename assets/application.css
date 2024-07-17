@@ -1062,6 +1062,11 @@ h4 {
     row-gap: 2rem;
   }
 
+  .sm\:gap-x-2 {
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+  }
+
   .sm\:overflow-auto {
     overflow: auto;
   }
