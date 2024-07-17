@@ -8,7 +8,11 @@
         </div>
         <div class="flex flex-col gap-y-2 w-full sm:flex-1">
             <h5 class="text-2xl font-bold text-white">{{ section.settings.company_name }}</h5>
-            <p class="text-base text-white"> {{ section.settings.company_details }} </p>
+            <div class="w-full h-auto flex flex-col gap-y-1">
+                <p class="text-base text-white"> {{ section.settings.company_address_one }} </p>
+                <p class="text-base text-white"> {{ section.settings.company_address_two }} </p>
+                <a href="#" class="text-white underline  text-base">{{ section.settings.company_email }}</a>
+            </div>
             <a href="#" class="text-white underline  text-base">Privacy</a>
         </div>
     </div>
@@ -27,10 +31,24 @@
       },
       {
         "type": "textarea",
-        "id": "company_details",
-        "label": "Info produttiva",
-        "default": "Industrijska 106 22400 Ruma, Serbia, info@adrianatex.com",
+        "id": "company_address_one",
+        "label": "Info address produttiva",
+        "default": "Industrijska 106",
         "info": "Inserisci qui le informazioni della produttiva."
+      },
+      {
+        "type": "text",
+        "id": "company_address_two",
+        "label": "Info address produttiva",
+        "default": "22400 Ruma",
+        "info": "Inserisci qui le informazioni della produttiva."
+      },
+      {
+        "type": "text",
+        "id": "company_email",
+        "label": "Email produttiva",
+        "default": "info@adrianatext.com",
+        "info": "Inserisci email della produttiva."
       }
         ]
 }
