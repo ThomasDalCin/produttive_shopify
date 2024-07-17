@@ -37,7 +37,10 @@
     "slider": {
       "type": "slider",
       "settings": {
-        "slider_img_one": "shopify:\/\/shop_images\/Box_foto.jpg"
+        "slider_img_one": "shopify:\/\/shop_images\/Box_foto.jpg",
+        "slider_img_two": "shopify:\/\/shop_images\/Box_foto.jpg",
+        "slider_img_three": "shopify:\/\/shop_images\/Box_foto.jpg",
+        "slider_img_four": "shopify:\/\/shop_images\/Box_foto.jpg"
       }
     },
     "column_featured_FmdYV4": {
