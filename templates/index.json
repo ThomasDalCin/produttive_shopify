@@ -37,10 +37,7 @@
     "slider": {
       "type": "slider",
       "settings": {
-        "slider_img_one": "shopify:\/\/shop_images\/Box_foto.jpg",
-        "slider_img_two": "shopify:\/\/shop_images\/Rectangle_25.png",
-        "slider_img_three": "shopify:\/\/shop_images\/Rectangle_23.png",
-        "slider_img_four": "shopify:\/\/shop_images\/Rectangle_27.png"
+        "slider_img_one": "shopify:\/\/shop_images\/Box_foto.jpg"
       }
     },
     "column_featured_FmdYV4": {
@@ -68,12 +65,7 @@
           "type": "old_events",
           "settings": {
             "event_title": "Christmas Dinner 2023",
-            "event_description": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content..",
-            "event_image": "shopify:\/\/shop_images\/Rectangle_20.png",
-            "event_image_1": "shopify:\/\/shop_images\/Rectangle_25.png",
-            "event_image_2": "shopify:\/\/shop_images\/Rectangle_26.png",
-            "event_image_3": "shopify:\/\/shop_images\/Rectangle_27.png",
-            "event_image_4": "shopify:\/\/shop_images\/Rectangle_25.png"
+            "event_description": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.."
           }
         }
       },
@@ -92,8 +84,8 @@
         "testimonial_two": "Jelena JeŠić",
         "testimonial_role_one": "IT Admin",
         "testimonial_role_two": "line leader",
-        "testimonial_img_one": "shopify:\/\/shop_images\/image_1.png",
-        "testimonial_img_two": "shopify:\/\/shop_images\/traceability-09_1.png",
+        "testimonial_img_one": "shopify:\/\/shop_images\/image_1.jpg",
+        "testimonial_img_two": "shopify:\/\/shop_images\/traceability-09_1.jpg",
         "interview_text_one": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.",
         "interview_text_two": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content."
       }
