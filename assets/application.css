@@ -942,18 +942,17 @@ body {
 }
 
 h1,
-h2,
-h3,
-h5 {
+h2 {
   font-family: "the-seasons", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
-h4 {
+h3,
+h5 {
   font-family: "scandia-web", sans-serif;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .heading-custom {
