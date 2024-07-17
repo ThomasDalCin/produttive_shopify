@@ -1,25 +1,26 @@
 <div class="container mx-auto">
-  <div class="w-full h-auto p-4 flex flex-col gap-y-8 sm:p-8 sm:gap-y-12">
+  <div class="w-full h-auto p-4 flex flex-col gap-y-4 sm:p-8 sm:gap-y-8">
 
     <div class="w-full h-auto flex justify-start items-start p-4">
-      <h2 class="text-5xl">{{ section.settings.section_heading }}</h2>
+      <h2 class="text-4xl">{{ section.settings.section_heading }}</h2>
     </div>
 
     <div class="flex flex-col gap-y-8 p-4 sm:flex-row sm:gap-x-8">
 
       <div class="w-full flex flex-col justify-start items-start gap-y-4 sm:w-1/2">
-        <div class="w-auto h-auto px-8 py-4 flex flex-col justify-start items-start" style="background-color: #A89A8C;">
-          <h3 class="text-3xl text-white font-bold">{{ section.settings.column_heading_first }}</h3>
+        <div class="w-auto h-auto p-4 flex flex-col justify-start items-start" style="background-color: #A89A8C;">
+          <h3 class="text-1xl text-white font-bold uppercase sm:text-2xl">{{ section.settings.column_heading_first }}</h3>
         </div>
         <p class="text-base">{{ section.settings.column_text_first }}</p>
       </div>
 
       <div class="w-full flex flex-col justify-start items-start gap-y-4 sm:w-1/2">
-        <div class="w-auto h-auto px-8 py-4 flex flex-col justify-start items-start bg-bg-primary">
-          <h3 class="text-3xl  text-white font-bold">{{ section.settings.column_heading_second }}</h3>
+        <div class="w-auto h-auto p-4 flex flex-col justify-start items-start bg-bg-primary">
+          <h3 class="text-1xl  text-white font-bold uppercase sm:text-2xl">{{ section.settings.column_heading_second }}</h3>
         </div>
         <p class="text-base">{{ section.settings.column_text_second }}</p>
       </div>
+
     </div>
 
   </div>
