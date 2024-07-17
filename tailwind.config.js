@@ -11,6 +11,7 @@ module.exports = {
       backgroundColor: {
         'bg-primary': '#A89A8C',
         'bg-secondary': '#D3CCC2',
+        'bg-light': '#F2F0ED'
       },
       height: {
         '200': '200px',
