@@ -939,6 +939,12 @@ h4 {
   font-style: italic;
 }
 
+.heading-custom{
+  font-family: "scandia-web", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 @media (min-width: 640px) {
   .sm\:-top-5 {
     top: -1.25rem;
