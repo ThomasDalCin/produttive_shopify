@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "hero-section": {
@@ -17,6 +26,11 @@
         "column_heading_second": "Our People",
         "column_text_first": "Founded in 2012 in Ruma, in the autonomous province of Vojvodina, Adriana.tex has been operating at full capacity since 2015, primarily producing swimwear. The well-organized structure allows for the creation of jobs for local people and efficiency in production and waste management activities.",
         "column_text_second": "For employees, daily transportation to and from the facility is organized and provided free of charge by the company. Additionally, the factory operates on a single work shift, with the workday ending at 2 PM, allowing employees to have free time for themselves and their families. Thanks to the services offered and effective organization, Adriana.tex has been recognized as a reliable employer by the Srem District (the area where the company is located)."
+      }
+    },
+    "quote": {
+      "type": "quote",
+      "settings": {
       }
     },
     "slider": {
@@ -82,19 +96,15 @@
         "interview_text_one": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.",
         "interview_text_two": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content."
       }
-    },
-    "quote":{
-      "type": "quote",
-      "settings": {}
     }
   },
   "order": [
     "hero-section",
     "column-featured",
+    "quote",
     "slider",
     "column_featured_FmdYV4",
     "events",
-    "testimonials",
-    "quote"
+    "testimonials"
   ]
 }
