@@ -1054,6 +1054,10 @@ h5 {
     width: auto;
   }
 
+  .sm\:min-w-0 {
+    min-width: 0px;
+  }
+
   .sm\:flex-1 {
     flex: 1 1 0%;
   }
