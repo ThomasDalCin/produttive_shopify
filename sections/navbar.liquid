@@ -2,7 +2,7 @@
 
   <div class="w-full h-auto flex flex-row relative">
 
-    <div class="flex-1 h-auto sm:flex  bg-black opacity-90 menu-container">
+    <div class="flex-1 h-auto sm:flex sm:flex-row sm:gap-x-4  bg-black opacity-90 menu-container">
       <div class="w-full h-screen p-4 flex flex-col sm:flex-row gap-y-4 sm:gap-x-4 items-start justify-center sm:items-center sm:justify-end">
         <h2 class="text-white text-3xl">{{ section.settings.company }}</h2>
         <a href="#" class="text-white">Company</a>
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="w-32 h-auto flex items-center justify-end cursor-pointer absolute right-4 top-4 z-40 menu-toggle">
+    <div class="w-32 h-auto flex items-center justify-end cursor-pointer absolute right-4 top-4 z-40 menu-toggle sm:hidden">
       {% render 'menu' %}
     </div>
 
@@ -20,14 +20,28 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const menuContainer = document.querySelector('.menu-container');
   
-    menuToggle.addEventListener('click', function () {
+    function toggleMenu() {
         menuContainer.classList.toggle('open');
         document.body.classList.toggle('no-scroll');
-    });
+    }
+  
+    function handleResize() {
+        if (window.innerWidth >= 640) {
+            menuContainer.classList.remove('menu-container');
+        } else {
+            menuContainer.classList.add('menu-container');
+        }
+    }
+  
+    menuToggle.addEventListener('click', toggleMenu);
+    window.addEventListener('resize', handleResize);
+  
+    // Initial check
+    handleResize();
   });
 </script>
 
