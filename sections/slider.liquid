@@ -1,84 +1,121 @@
 <div class="container mx-auto h-auto">
+  <div class="w-full h-auto p-4 flex items-start justify-center flex-col gap-y-4 sm:gap-y-8">
+    <div class="w-full h-500 flex flex-row overflow-hidden relative">
 
-    <div class="w-full h-auto p-4 flex items-start justify-center flex-col gap-y-4 sm:gap-y-8">
-        <div class="w-full h-500 flex flex-row overflow-hidden">
+      {% assign slider_imgs = "slider_img_one,slider_img_two,slider_img_three,slider_img_four," | split: ',' %}
+      {% assign title_imgs = "title_img_one,title_img_two,title_img_three,title_img_four," | split: ',' %}
+      {% assign numSlides = slider_imgs.size %}
 
-            {% assign slider_imgs = "slider_img_one,slider_img_two,slider_img_three,slider_img_four" | split: ',' %}
-            {% for slider_img in slider_imgs %}
-            {% assign slider_img_url = section.settings[slider_img] | img_url: 'master' %}
-            <div class="w-full min-w-full h-full slider-img transition-all ease duration-200">
-                <img class="object-cover w-full h-full" src="{{ slider_img_url }}"
-                    alt="Slider Image {{ forloop.index }}">
+      {% for slider_img in slider_imgs %}
+        {% assign slider_img_url = section.settings[slider_img] | img_url: 'master' %}
+        {% assign title_text = section.settings[title_imgs[forloop.index0]] %}
+        <div class="w-full min-w-full h-full slider-img transition-all ease duration-200 relative">
+          <img
+            class="object-cover w-full h-full"
+            src="{{ slider_img_url }}"
+            alt="Slider Image {{ forloop.index }}">
+          <div class="flex flex-col absolute bottom-0 left-0 w-full h-auto px-4 py-8 text-left z-10 gap-y-4" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(72, 72, 72, 0.6), rgba(102, 102, 102, 0.6));">
+            <div class="w-auto h-auto mb-2">
+              <h4 class="text-white">{{ title_text | append: " " | append: forloop.index }}</h4>
             </div>
-            {% endfor %}
-
+          </div>
         </div>
-
-        <div class="w-full h-auto flex flex-row gap-x-4">
-            {% render 'arrow-left' %}
-            {% render 'arrow-right' %}
+      {% endfor %}
+      <div class="w-full h-auto absolute z-20 left-4 bottom-4">
+        <!-- Slider Controls -->
+        <div class="w-full h-auto flex flex-row gap-x-2">
+          {% for i in (1..numSlides) %}
+            <div class="slider-control w-2 h-2 bg-white rounded-full cursor-pointer active-control transition-all duration-200 ease-in"></div>
+          {% endfor %}
         </div>
+      </div>
     </div>
-
+  </div>
 </div>
 
 <script>
     // Ottieni i miei elementi
     const arrows = Array.from(document.querySelectorAll('.arrow'));
     const slides = Array.from(document.querySelectorAll('.slider-img'));
-
+  
     // Dichiara le mie variabili
-    let currentXpos = 0;
-
+    let currentXposBanner = 0;
+  
     function moveSlider() {
         arrows.forEach((arrow, index) => {
             arrow.addEventListener('click', () => {
                 if (index % 2 === 0) {
-                    if (currentXpos < 0) {
-                        currentXpos += 100;
+                    if (currentXposBanner < 0) {
+                        currentXposBanner += 100;
                     }
                 } else {
-                    if (currentXpos > -((slides.length - 1) * 100)) {
-                        currentXpos -= 100;
+                    if (currentXposBanner > -((slides.length - 1) * 100)) {
+                        currentXposBanner -= 100;
                     }
                 }
                 slides.forEach((slide) => {
-                    slide.style.transform = `translateX(${currentXpos}%)`;
+                    slide.style.transform = `translateX(${currentXposBanner}%)`;
                 });
             });
         });
     }
-
+  
     moveSlider();
 </script>
 
-
 {% schema %}
-{
-"name": "slider",
-"class": "margin-section",
-"settings": [
-{
-"type": "image_picker",
-"id": "slider_img_one",
-"label": "Immagine Slider",
-"info": "Inserisci immagine per slider."
-}, {
-"type": "image_picker",
-"id": "slider_img_two",
-"label": "Immagine Slider",
-"info": "Inserisci immagine per slider."
-}, {
-"type": "image_picker",
-"id": "slider_img_three",
-"label": "Immagine Slider",
-"info": "Inserisci immagine per slider."
-}, {
-"type": "image_picker",
-"id": "slider_img_four",
-"label": "Immagine Slider",
-"info": "Inserisci immagine per slider."
-}
-]
-}
+  {
+    "name": "slider",
+    "class": "margin-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "slider_img_one",
+        "label": "Immagine Slider",
+        "info": "Inserisci immagine per slider."
+      },
+      {
+        "type": "text",
+        "id": "title_img_one",
+        "label": "Titolo Immagine",
+        "default": "Titolo Immagine",
+        "info": "Inserisci titolo immagine."
+      },
+      {
+        "type": "image_picker",
+        "id": "slider_img_two",
+        "label": "Immagine Slider",
+        "info": "Inserisci immagine per slider."
+      },
+      {
+        "type": "text",
+        "id": "title_img_two",
+        "label": "Titolo Immagine",
+        "default": "Titolo Immagine",
+        "info": "Inserisci titolo immagine."
+      }, {
+        "type": "image_picker",
+        "id": "slider_img_three",
+        "label": "Immagine Slider",
+        "info": "Inserisci immagine per slider."
+      }, {
+        "type": "text",
+        "id": "title_img_three",
+        "label": "Titolo Immagine",
+        "default": "Titolo Immagine",
+        "info": "Inserisci titolo immagine."
+      }, {
+        "type": "image_picker",
+        "id": "slider_img_four",
+        "label": "Immagine Slider",
+        "info": "Inserisci immagine per slider."
+      }, {
+        "type": "text",
+        "id": "title_img_four",
+        "label": "Titolo Immagine",
+        "default": "Titolo Immagine",
+        "info": "Inserisci titolo immagine."
+      }
+    ]
+  }
 {% endschema %}
