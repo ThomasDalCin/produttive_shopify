@@ -40,18 +40,24 @@
         const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
   
         for(let i = 0; slides.length; i++){
-            slides.forEach((slide)=>{
+
+            slides.forEach((slide) => {
                 slide.setAttribute('data-attibute',  `slide + ${i}` )
             })
-            slidersControls.forEach((control)=>{
+            slidersControls.forEach((control) => {
                 control.setAttribute('data-attibute',  `slide + ${i}` )
             })
         }
-
+  
         slidersControls.forEach((control)=>{
          control.addEventListener('click', (e)=>{
+  
+            if( control.classList.contains('control-active')) {
+                control.classList.remove('control-active');
+            }
+            
             let clickedEl = e.currentTarget;
-            console.log(clickedEl)
+            clickedEl.classList.add('contro-active');
          })
         })
     })
