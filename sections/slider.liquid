@@ -1,6 +1,6 @@
 <div class="container mx-auto h-auto">
   <div class="w-full h-auto p-4 flex items-start justify-center flex-col gap-y-4 sm:gap-y-8">
-    <div class="w-full h-500 flex flex-row overflow-hidden relative">
+    <div class="w-full h-500 flex flex-row overflow-hidden relative slider-container">
 
       {% assign slider_imgs = "slider_img_one,slider_img_two,slider_img_three,slider_img_four," | split: ',' %}
       {% assign title_imgs = "title_img_one,title_img_two,title_img_three,title_img_four," | split: ',' %}
@@ -35,34 +35,43 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    const sliderContainer = document.querySelector('.slider-container');
+    const slides = Array.from(document.querySelectorAll('.slider-img'));
+    const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
+    
+    // Assegna data-attribute a ciascuna slide e controllo
+    slides.forEach((slide, i) => {
+        slide.setAttribute('data-attribute', `slide-${i}`);
+    });
 
-const slides = Array.from(document.querySelectorAll('.slider-img'));
-const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
+    slidersControls.forEach((control, i) => {
+        control.setAttribute('data-attribute', `slide-${i}`);
+    });
 
-slides.forEach((slide, i) => {
-    slide.setAttribute('data-attribute', `slide-${i}`);
-});
+    // Aggiungi event listener ai controlli
+    slidersControls.forEach((control) => {
+        control.addEventListener('click', (e) => {
+            const controlAttr = e.currentTarget.getAttribute('data-attribute');
+            let targetIndex = 0;
 
-slidersControls.forEach((control, i) => {
-    control.setAttribute('data-attribute', `slide-${i}`);
-});
+            slides.forEach((slide, index) => {
+                const slideAttr = slide.getAttribute('data-attribute');
+                if (controlAttr === slideAttr) {
+                    targetIndex = index;
+                }
+            });
 
-slidersControls.forEach((control) => {
-    control.addEventListener('click', (e) => {
-        const controlAttr = e.currentTarget.getAttribute('data-attribute');
-        let slideToMove = null;
+            // Sposta il contenitore delle slide
+            sliderContainer.style.transform = `translateX(-${targetIndex * 100}%)`;
 
-        slides.forEach((slide) => {
-            const slideAttr = slide.getAttribute('data-attribute');
-            if (controlAttr === slideAttr) {
-                slideToMove = slide;
-                console.log(slide); 
-            }
+            // Rimuovi la classe active da tutti i controlli e aggiungila al controllo cliccato
+            slidersControls.forEach((control) => {
+                control.classList.remove('control-active');
+            });
+            e.currentTarget.classList.add('control-active');
         });
     });
 });
-});
-
 </script>
 
 {% schema %}
