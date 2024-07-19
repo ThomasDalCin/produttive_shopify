@@ -37,7 +37,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slides = Array.from(document.querySelectorAll('.slider-img'));
     const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
-    
+    const slideContainer = document.querySelector('.w-full.h-500');
+
+    let currentIndex = 0;
+
     // Assegna data-attribute a ciascuna slide e controllo
     slides.forEach((slide, i) => {
         slide.setAttribute('data-attribute', `slide-${i}`);
@@ -46,6 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
     slidersControls.forEach((control, i) => {
         control.setAttribute('data-attribute', `slide-${i}`);
     });
+
+    // Funzione per mostrare la slide selezionata
+    function showSlide(index) {
+        if (index < 0 || index >= slides.length) return; // Verifica l'indice
+        slideContainer.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+
+        // Rimuovi la classe active da tutti i controlli e aggiungila al controllo cliccato
+        slidersControls.forEach((control) => {
+            control.classList.remove('control-active');
+        });
+        slidersControls[currentIndex].classList.add('control-active');
+    }
 
     // Aggiungi event listener ai controlli
     slidersControls.forEach((control) => {
@@ -57,20 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 const slideAttr = slide.getAttribute('data-attribute');
                 if (controlAttr === slideAttr) {
                     targetIndex = index;
-                    slide.style.transform = `translateX(-${targetIndex * 100}%)`;
                 }
             });
 
-            // Sposta il contenitore delle slide
-
-            // Rimuovi la classe active da tutti i controlli e aggiungila al controllo cliccato
-            slidersControls.forEach((control) => {
-                control.classList.remove('control-active');
-            });
-            e.currentTarget.classList.add('control-active');
+            showSlide(targetIndex);
         });
     });
+
+    // Mostra la prima slide all'avvio
+    showSlide(currentIndex);
 });
+</script>
+
 </script>
 
 {% schema %}
