@@ -41,10 +41,10 @@
   
         for(let i = 0; slides.length; i++){
             slides.forEach((slide)=>{
-                slide.setAttribute('data-attibute', i)
+                slide.setAttribute('data-attibute',  `slide + ${i}` )
             })
             slidersControls.forEach((control)=>{
-                control.setAttribute('data-set', i)
+                control.setAttribute('data-attibute',  `slide + ${i}` )
             })
         }
 
