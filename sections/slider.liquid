@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentIndex = 0;
 
-    // Assegna data-attribute a ciascuna slide e controllo
     slides.forEach((slide, i) => {
         slide.setAttribute('data-attribute', `slide-${i}`);
     });
@@ -53,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funzione per mostrare la slide selezionata
     function showSlide(index) {
-        if (index < 0 || index >= slides.length) return; // Verifica l'indice
+        
 
         slides.forEach((slide, i) => {
             slide.style.transform = `translateX(${(i - index) * 100}%)`;
