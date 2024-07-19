@@ -38,11 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = Array.from(document.querySelectorAll('.slider-img'));
     const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
 
-    // Imposta la slide visibile inizialmente
-    slides[0].classList.add('visible');
-    slides[0].style.zIndex = 2; // Imposta lo z-index alto per la slide visibile inizialmente
-
-    // Aggiungi data-attribute a ciascuna slide e controllo
+    // Assegna data-attribute a ciascuna slide e controllo
     slides.forEach((slide, i) => {
         slide.setAttribute('data-attribute', `slide-${i}`);
         slide.style.zIndex = 1; // Imposta lo z-index iniziale per tutte le slide
@@ -62,21 +58,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 const slideAttr = slide.getAttribute('data-attribute');
                 if (controlAttr === slideAttr) {
                     targetIndex = index;
+                    slide.style.transform = `translateX(-${targetIndex * 100}%)`;
                 }
             });
 
-            // Nascondi tutte le slide e impostare il loro z-index
-            slides.forEach((slide, index) => {
-                if (index === targetIndex) {
-                    slide.classList.add('visible');
-                    slide.classList.remove('hidden');
-                    slide.style.zIndex = 2; // Imposta lo z-index alto per la slide visibile
-                } else {
-                    slide.classList.remove('visible');
-                    slide.classList.add('hidden');
-                    slide.style.zIndex = 1; // Imposta lo z-index basso per le slide nascoste
-                }
+            // Nascondi tutte le slide
+            slides.forEach((slide) => {
+                slide.classList.add('hidden');
+                slide.classList.remove('visible');
+                slide.style.zIndex = 1; // Imposta lo z-index basso per le slide nascoste
             });
+
+            // Mostra la slide selezionata
+            slides[targetIndex].classList.add('visible');
+            slides[targetIndex].classList.remove('hidden');
+            slides[targetIndex].style.zIndex = 2; // Imposta lo z-index alto per la slide visibile
+
 
             // Aggiorna i controlli
             slidersControls.forEach((control) => {
