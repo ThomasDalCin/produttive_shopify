@@ -20,28 +20,14 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const menuContainer = document.querySelector('.menu-container');
   
-    function toggleMenu() {
+    menuToggle.addEventListener('click', function () {
         menuContainer.classList.toggle('open');
         document.body.classList.toggle('no-scroll');
-    }
-  
-    function handleResize() {
-        if (window.innerWidth >= 640) {
-            menuContainer.classList.remove('menu-container');
-        } else {
-            menuContainer.classList.add('menu-container');
-        }
-    }
-  
-    menuToggle.addEventListener('click', toggleMenu);
-    window.addEventListener('resize', handleResize);
-  
-    // Initial check
-    handleResize();
+    });
   });
 </script>
 
