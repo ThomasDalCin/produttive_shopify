@@ -1104,6 +1104,10 @@ h5 {
     top: -1.25rem;
   }
 
+  .sm\:flex {
+    display: flex;
+  }
+
   .sm\:hidden {
     display: none;
   }
