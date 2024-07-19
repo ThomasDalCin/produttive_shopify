@@ -21,11 +21,11 @@
           </div>
         </div>
       {% endfor %}
-      <div class="w-full h-auto absolute z-20 left-4 bottom-4">
+      <div class="w-full h-auto absolute z-20 left-4 bottom-4 right-4">
         <!-- Slider Controls -->
         <div class="w-full h-auto flex flex-row gap-x-2">
           {% for i in (1..numSlides) %}
-            <div class="slider-control w-2 h-2 bg-white rounded-full cursor-pointer active-control transition-all duration-200 ease-in"></div>
+            <div class="slider-control w-2 h-2 bg-white rounded-full cursor-pointer transition-all duration-200 ease-in"></div>
           {% endfor %}
         </div>
       </div>
