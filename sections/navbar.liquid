@@ -2,7 +2,7 @@
 
     <div class="w-full h-auto flex flex-row relative">
 
-        <div class="flex-1 h-auto hidden sm:flex  bg-black opacity-90">
+        <div class="flex-1 h-auto hidden sm:flex  bg-black opacity-90 menu-container">
             <div
                 class="w-full h-screen p-4 flex flex-col sm:flex-row gap-y-4 sm:gap-x-4 items-start justify-center sm:items-center sm:justify-end">
                 <h2 class="text-white text-3xl">{{ section.settings.company }}</h2>
@@ -13,12 +13,24 @@
             </div>
         </div>
 
-        <div class="w-32 h-auto flex items-center justify-end cursor-pointer absolute right-4 top-4 z-40">
+        <div class="w-32 h-auto flex items-center justify-end cursor-pointer absolute right-4 top-4 z-40 menu-toggle">
             {% render 'menu' %}
         </div>
 
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuContainer = document.querySelector('.menu-container');
+
+    menuToggle.addEventListener('click', function () {
+        menuContainer.classList.toggle('open');
+    });
+});
+
+</script>
 
 {% schema %}
 {
