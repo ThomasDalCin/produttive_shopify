@@ -34,15 +34,27 @@
 </div>
 
 <script>
-    // Ottieni i miei elementi
-    const slides = Array.from(document.querySelectorAll('.slider-img'));
-    const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
-    slides.forEach((slide)=>{
-        const rect = slide.getBoundingClientRect();
-        const xPos = rect.x;
-        console.log(xPos)
-    })
+    document.addEventListener('DOMContentLoaded', () => {
+  
+        const slides = Array.from(document.querySelectorAll('.slider-img'));
+        const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
+  
+        for(let i = 0; slides.length; i++){
+            slides.forEach((slide)=>{
+                slide.setAttribute('data-attibute', i)
+            })
+            slidersControls.forEach((control)=>{
+                control.setAttribute('data-set', i)
+            })
+        }
 
+        slidersControls.forEach((control)=>{
+         control.addEventListener('click', (e)=>{
+            let clickedEl = e.currentTarget;
+            console.log(clickedEl)
+         })
+        })
+    })
 </script>
 
 {% schema %}
