@@ -34,33 +34,35 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-  
-        const slides = Array.from(document.querySelectorAll('.slider-img'));
-        const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
-  
-        for(let i = 0; slides.length; i++){
+document.addEventListener('DOMContentLoaded', () => {
 
-            slides.forEach((slide) => {
-                slide.setAttribute('data-attibute',  `slide + ${i}` )
-            })
-            slidersControls.forEach((control) => {
-                control.setAttribute('data-attibute',  `slide + ${i}` )
-            })
-        }
-  
-        slidersControls.forEach((control)=>{
-         control.addEventListener('click', (e)=>{
-  
-            if( control.classList.contains('control-active')) {
-                control.classList.remove('control-active');
+const slides = Array.from(document.querySelectorAll('.slider-img'));
+const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
+
+slides.forEach((slide, i) => {
+    slide.setAttribute('data-attribute', `slide-${i}`);
+});
+
+slidersControls.forEach((control, i) => {
+    control.setAttribute('data-attribute', `slide-${i}`);
+});
+
+slidersControls.forEach((control) => {
+    control.addEventListener('click', (e) => {
+        const controlAttr = e.currentTarget.getAttribute('data-attribute');
+        let slideToMove = null;
+
+        slides.forEach((slide) => {
+            const slideAttr = slide.getAttribute('data-attribute');
+            if (controlAttr === slideAttr) {
+                slideToMove = slide;
+                console.log(slide); 
             }
-            
-            let clickedEl = e.currentTarget;
-            clickedEl.classList.add('contro-active');
-         })
-        })
-    })
+        });
+    });
+});
+});
+
 </script>
 
 {% schema %}
