@@ -35,57 +35,58 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const slides = Array.from(document.querySelectorAll('.slider-img'));
     const slidersControls = Array.from(document.querySelectorAll('.slider-control'));
     const sliderWrapper = document.querySelector('.slider-wrapper');
-
+  
     let currentIndex = 0;
-
+  
     slides.forEach((slide, i) => {
         slide.setAttribute('data-attribute', `slide-${i}`);
     });
-
+  
     slidersControls.forEach((control, i) => {
         control.setAttribute('data-attribute', `slide-${i}`);
     });
-
+  
     // Funzione per mostrare la slide selezionata
     function showSlide(index) {
         
-
+  
         slides.forEach((slide, i) => {
             slide.style.transform = `translateX(${(i - index) * 100}%)`;
         });
+        
         currentIndex = index;
-
+  
         // Rimuovi la classe active da tutti i controlli e aggiungila al controllo cliccato
         slidersControls.forEach((control) => {
             control.classList.remove('control-active');
         });
         slidersControls[currentIndex].classList.add('control-active');
     }
-
+  
     // Aggiungi event listener ai controlli
     slidersControls.forEach((control) => {
         control.addEventListener('click', (e) => {
             const controlAttr = e.currentTarget.getAttribute('data-attribute');
             let targetIndex = 0;
-
+  
             slides.forEach((slide, index) => {
                 const slideAttr = slide.getAttribute('data-attribute');
                 if (controlAttr === slideAttr) {
                     targetIndex = index;
                 }
             });
-
+  
             showSlide(targetIndex);
         });
     });
-
+  
     // Mostra la prima slide all'avvio
     showSlide(currentIndex);
-});
+  });
 </script>
 
 
