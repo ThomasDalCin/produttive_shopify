@@ -1005,6 +1005,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[bg-primary\] {
+  color: bg-primary;
+}
+
 .underline {
   text-decoration-line: underline;
 }
