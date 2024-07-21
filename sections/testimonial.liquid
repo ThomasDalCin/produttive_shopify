@@ -44,7 +44,7 @@
               {% render 'arrow-custom' %}
             </div>
           </div>
-          <div class="w-full h-0 overflow-hidden expandableContent transition-all ease duration-200">
+          <div class="w-full expandableContent">
             <p class="text-base text-white">{{ section.settings.interview_text_two }}</p>
           </div>        
         </div>
@@ -57,29 +57,19 @@
 
 <script>
 const arrowIcons = document.querySelectorAll('.arrow-custom');
-
 arrowIcons.forEach((arrow) => {
   arrow.addEventListener('click', (event) => {
     const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
 
     if (expandableContent) {
-      if (expandableContent.classList.contains('h-auto')) {
-        expandableContent.style.height = expandableContent.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-          expandableContent.style.height = '0'; 
-          expandableContent.classList.remove('h-auto');
-        });
+      if (expandableContent.classList.contains('open')) {
+        expandableContent.classList.remove('open');
       } else {
-        expandableContent.classList.add('h-auto');
-        expandableContent.style.height = expandableContent.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-          expandableContent.style.height = 'auto';
-        });
+        expandableContent.classList.add('open');
       }
     }
   });
 });
-
 
 </script>
 
