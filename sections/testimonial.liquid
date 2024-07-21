@@ -14,7 +14,7 @@
               <p class="text-base text-white">{{ section.settings.testimonial_role_one }}</p>
             </div>
             <div class="flex flex-col items-center justify-center gap-y-2 w-auto h-auto cursor-pointer">
-              <p class="text-sm text-white discover">Discover</p>
+              <p class="text-sm text-white discover"></p>
               {% render 'arrow-custom' %}
             </div>
           </div>
@@ -40,11 +40,11 @@
               <p class="text-base text-white">{{ section.settings.testimonial_role_two }}</p>
             </div>
             <div class="flex flex-col items-center justify-center gap-y-2 w-auto h-auto cursor-pointer">
-              <p class="text-sm text-white discover">Discover</p>
+              <p class="text-sm text-white discover"></p>
               {% render 'arrow-custom' %}
             </div>
           </div>
-          <div  class="w-full h-0 overflow-hidden expandableContent">
+          <div  class="w-full h-0 overflow-hidden expandableContent transition-all ease-in duration-200">
             <p class="text-base text-white">{{ section.settings.interview_text_two }}</p>
           </div>
         </div>
@@ -57,14 +57,20 @@
 
 <script>
   const arrowIcons = document.querySelectorAll('.arrow-custom');
+    let boxOpen = false;
+
     arrowIcons.forEach((arrow) => {
       arrow.addEventListener('click', (event) => {
       const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
+
       if (expandableContent) {
-        expandableContent.classList.toggle('h-auto');
-        expandableContent.classList.toggle('h-0');
-      } else {
-        console.log('Nessun elemento .expandableContent trovato vicino.');
+        boxOpen = true;
+
+        if(boxOpen){
+          
+          expandableContent.classList.toggle('h-auto');
+          expandableContent.classList.toggle('h-0');
+        } 
       }
     });
   });
