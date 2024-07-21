@@ -23,10 +23,11 @@
     document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const menuContainer = document.querySelector('.menu-container');
+    const menuIcon = document.querySelector('.menu-icon');
   
     menuToggle.addEventListener('click', function () {
-        menuToggle.classList.toggle('rotate')
         menuContainer.classList.toggle('open');
+        menuIcon.classList.toggle('rotate')
         document.body.classList.toggle('no-scroll');
     });
   });
