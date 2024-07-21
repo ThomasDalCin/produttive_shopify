@@ -1,6 +1,7 @@
 <div class="container mx-auto flex flex-col h-auto p-4 gap-y-8 sm:p-8 sm:gap-y-12">
-
   <div class="flex flex-col gap-y-8 sm:gap-x-8 sm:flex-row">
+    
+    <!-- First Testimonial -->
     <div class="w-full sm:w-1/2 flex justify-start items-start gap-y-4">
       <div class="relative w-full h-500">
         <img
@@ -24,15 +25,14 @@
         </div>
       </div>
     </div>
-
-    <div class="w-full sm:w-1/2  flex justify-start items-start gap-y-4">
+    
+    <!-- Second Testimonial -->
+    <div class="w-full sm:w-1/2 flex justify-start items-start gap-y-4">
       <div class="relative w-full h-500">
-
         <img
           class="object-cover w-full h-full absolute z-0"
           src="{{ section.settings.testimonial_img_two | img_url: 'master' | default: 'assets/default_image_two.jpg' }}"
           alt="{{ section.settings.testimonial_img_two.alt | default: 'Default alt text for image two' }}">
-
         <div class="flex flex-col absolute bottom-0 left-0 w-full p-4 text-left z-10 gap-y-4 parentExpand" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(72, 72, 72, 0.6), rgba(102, 102, 102, 0.6));">
           <div class="flex flex-row w-full h-auto gap-x-2">
             <div class="flex flex-col flex-1 gap-y-2">
@@ -48,9 +48,9 @@
             <p class="text-base text-white">{{ section.settings.interview_text_two }}</p>
           </div>
         </div>
-
       </div>
     </div>
+    
   </div>
 </div>
 
