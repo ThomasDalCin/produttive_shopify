@@ -62,6 +62,7 @@
   arrowIcons.forEach((arrow) => {
   arrow.addEventListener('click', (event) => {
     const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
+    const discroverText = arrow.closest('.parentExpand').querySelector('.discover');
   
     if (expandableContent) {
   
