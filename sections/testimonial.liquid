@@ -67,10 +67,11 @@
         expandableContent.classList.add('h-0');
         boxOpen = true;
       }
-      
+
       if(expandableContent && boxOpen == true){
         expandableContent.classList.remove('h-auto');
         expandableContent.classList.remove('h-0');
+        boxOpen = false;
       }
     });
   });
