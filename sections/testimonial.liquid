@@ -20,7 +20,7 @@
           </div>
           <div class="w-full expandableContent">
             <p class="text-base text-white">{{ section.settings.interview_text_two }}</p>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
           </div>
           <div class="w-full expandableContent">
             <p class="text-base text-white">{{ section.settings.interview_text_two }}</p>
-          </div>        
+          </div>
         </div>
 
       </div>
@@ -56,27 +56,25 @@
 
 
 <script>
-const arrowIcons = document.querySelectorAll('.arrow-custom');
-
-
-arrowIcons.forEach((arrow) => {
+  const arrowIcons = document.querySelectorAll('.arrow-custom');
+  
+  
+  arrowIcons.forEach((arrow) => {
   arrow.addEventListener('click', (event) => {
     const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
-    const discroverText = arrow.closest('.parentExpand').querySelector('.discover').innerHTML;
-    console.log(discroverText)
-
+  
     if (expandableContent) {
+  
       if (expandableContent.classList.contains('open')) {
         expandableContent.classList.remove('open');
-        boxOpen = false;
+        discroverText.innerHTML = 'Discover More';
       } else {
         expandableContent.classList.add('open');
-        boxOpen = true
+        discroverText.innerHTML = 'Discover Less';
       }
     }
   });
-});
-
+  });
 </script>
 
 
