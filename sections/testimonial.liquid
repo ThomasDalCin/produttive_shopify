@@ -66,10 +66,12 @@
       if (expandableContent) {
         boxOpen = true;
         if(boxOpen){
-          expandableContent.classList.toggle('h-auto');
-          expandableContent.classList.toggle('h-0');
+          expandableContent.classList.add('h-auto');
+          expandableContent.classList.add('h-0');
         } else {
           boxOpen = false;
+          expandableContent.classList.remove('h-auto');
+          expandableContent.classList.remove('h-0');
         }
       }
     });
