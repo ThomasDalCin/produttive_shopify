@@ -56,25 +56,23 @@
 
 
 <script>
-  const arrowIcons = document.querySelectorAll('.arrow-custom');
-  let boxOpen = false;
-  arrowIcons.forEach((arrow) => {
-    arrow.addEventListener('click', (event) => {
-      const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
+const arrowIcons = document.querySelectorAll('.arrow-custom');
+arrowIcons.forEach((arrow) => {
+  arrow.addEventListener('click', (event) => {
+    const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
 
-      if (expandableContent) {
-        expandableContent.classList.add('h-auto');
-        expandableContent.classList.add('h-0');
-        boxOpen = true;
-      }
-
-      if(expandableContent && boxOpen == true){
+    if (expandableContent) {
+      if (expandableContent.classList.contains('h-auto')) {
         expandableContent.classList.remove('h-auto');
+        expandableContent.classList.add('h-0');
+      } else {
         expandableContent.classList.remove('h-0');
-        boxOpen = false;
+        expandableContent.classList.add('h-auto');
       }
-    });
+    }
   });
+});
+
 </script>
 
 
