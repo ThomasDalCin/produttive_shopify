@@ -46,7 +46,7 @@
           </div>
           <div class="w-full h-0 overflow-hidden expandableContent transition-all ease duration-200">
             <p class="text-base text-white">{{ section.settings.interview_text_two }}</p>
-          </div>
+          </div>        
         </div>
 
       </div>
@@ -57,21 +57,29 @@
 
 <script>
 const arrowIcons = document.querySelectorAll('.arrow-custom');
+
 arrowIcons.forEach((arrow) => {
   arrow.addEventListener('click', (event) => {
     const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
 
     if (expandableContent) {
       if (expandableContent.classList.contains('h-auto')) {
-        expandableContent.classList.remove('h-auto');
-        expandableContent.classList.add('h-0');
+        expandableContent.style.height = expandableContent.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+          expandableContent.style.height = '0'; 
+          expandableContent.classList.remove('h-auto');
+        });
       } else {
-        expandableContent.classList.remove('h-0');
         expandableContent.classList.add('h-auto');
+        expandableContent.style.height = expandableContent.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+          expandableContent.style.height = 'auto';
+        });
       }
     }
   });
 });
+
 
 </script>
 
