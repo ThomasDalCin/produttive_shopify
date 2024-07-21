@@ -1009,6 +1009,10 @@ video {
   color: bg-primary;
 }
 
+.text-\[bg-bg-primary\] {
+  color: bg-bg-primary;
+}
+
 .underline {
   text-decoration-line: underline;
 }
