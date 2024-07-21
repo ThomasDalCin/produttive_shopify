@@ -1013,6 +1013,11 @@ video {
   color: bg-bg-primary;
 }
 
+.text-\[\#A89A8C\] {
+  --tw-text-opacity: 1;
+  color: rgb(168 154 140 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
