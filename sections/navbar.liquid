@@ -30,6 +30,12 @@
         menuIcon.classList.toggle('rotate')
         document.body.classList.toggle('no-scroll');
     });
+  
+    document.addEventListener('scroll', ()=>{
+      if(scrollY >= 10){
+        menuIcon.style.color = '#A89A8C';
+      }
+    })
   });
 </script>
 
