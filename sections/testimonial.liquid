@@ -57,22 +57,20 @@
 
 <script>
   const arrowIcons = document.querySelectorAll('.arrow-custom');
-    let boxOpen = false;
-  
-    arrowIcons.forEach((arrow) => {
-      arrow.addEventListener('click', (event) => {
+  let boxOpen = false;
+  arrowIcons.forEach((arrow) => {
+    arrow.addEventListener('click', (event) => {
       const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
-  
+
       if (expandableContent) {
+        expandableContent.classList.add('h-auto');
+        expandableContent.classList.add('h-0');
         boxOpen = true;
-        if(boxOpen){
-          expandableContent.classList.add('h-auto');
-          expandableContent.classList.add('h-0');
-        } else {
-          boxOpen = false;
-          expandableContent.classList.remove('h-auto');
-          expandableContent.classList.remove('h-0');
-        }
+      }
+      
+      if(expandableContent && boxOpen == true){
+        expandableContent.classList.remove('h-auto');
+        expandableContent.classList.remove('h-0');
       }
     });
   });
