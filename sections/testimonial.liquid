@@ -39,7 +39,7 @@
               <h3 class="text-3xl text-white">{{ section.settings.testimonial_two }}</h3>
               <p class="text-base text-white">{{ section.settings.testimonial_role_two }}</p>
             </div>
-            <div class="flex flex-col items-center justify-center gap-y-2 w-auto h-auto cursor-pointer">
+            <div class="flex flex-col items-center justify-center gap-y-2 w-auto h-auto cursor-pointer discover-content">
               <p class="text-sm text-white discover">Discover More</p>
               {% render 'arrow-custom' %}
             </div>
@@ -62,16 +62,16 @@
   arrowIcons.forEach((arrow) => {
   arrow.addEventListener('click', (event) => {
     const expandableContent = arrow.closest('.parentExpand').querySelector('.expandableContent');
-    const discroverText = arrow.closest('.parentExpand').querySelector('.discover');
+    const discoverText = arrow.closest('.discover-content').querySelector('.discover');
   
     if (expandableContent) {
   
       if (expandableContent.classList.contains('open')) {
         expandableContent.classList.remove('open');
-        discroverText.innerHTML = 'Discover More';
+        discoverText.innerHTML = 'Discover More';
       } else {
         expandableContent.classList.add('open');
-        discroverText.innerHTML = 'Discover Less';
+        discoverText.innerHTML = 'Discover Less';
       }
     }
   });
