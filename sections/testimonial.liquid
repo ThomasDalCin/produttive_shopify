@@ -69,9 +69,11 @@
       if (expandableContent.classList.contains('open')) {
         expandableContent.classList.remove('open');
         discoverText.innerHTML = 'Discover More';
+        arrow.classList.remove('rotate-180');
       } else {
         expandableContent.classList.add('open');
         discoverText.innerHTML = 'Discover Less';
+        arrow.classList.add('rotate-180');
       }
     }
   });
