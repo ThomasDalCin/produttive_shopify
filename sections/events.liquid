@@ -94,11 +94,9 @@
       
       // Verifica se il contenuto è visibile o nascosto
       if (content.classList.contains('close-content')) {
-        content.classList.remove('close-content'); // Rimuovi la classe hidden per mostrare il contenuto
-        content.classList.add('flex'); // Assicurati che il contenuto sia visibile con flex
+        content.classList.remove('close-content'); 
       } else {
-        content.classList.add('close-content'); // Aggiungi la classe hidden per nascondere il contenuto
-        content.classList.remove('flex'); // Rimuovi la classe flex
+        content.classList.add('close-content'); 
       }
       arrow.classList.toggle('rotate-arrow');
     });
