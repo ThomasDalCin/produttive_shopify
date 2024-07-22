@@ -83,8 +83,8 @@
   
   //set hide/expand section
   document.addEventListener('DOMContentLoaded', () => {
-      const content = document.getElementById('content-images');
-      const arrow = document.getElementById('arrow-up');
+      const content = document.querySelectorAll('content-images');
+      const arrow = document.querySelectorAll('arrow-up');
   
       const classes = ['flex', 'items-start', 'justify-start', 'h-auto', 'w-full', 'flex-col', 'gap-y-8'];
       content.classList.remove(...classes);
