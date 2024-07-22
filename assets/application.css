@@ -1161,6 +1161,10 @@ h5 {
     height: 10rem;
   }
 
+  .sm\:h-600 {
+    height: 600px;
+  }
+
   .sm\:w-1\/2 {
     width: 50%;
   }
@@ -1236,6 +1240,10 @@ h5 {
 }
 
 @media (min-width: 768px) {
+  .md\:h-700 {
+    height: 700px;
+  }
+
   .md\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
