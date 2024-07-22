@@ -11,32 +11,34 @@
           <div class="flex flex-1 h-auto">
             <h3 class="text-2xl">{{ block.settings.event_title }}</h3>
           </div>
-          <div class="w-auto h-auto arrow-up">
+          <div class="w-auto h-auto arrow-up cursor-pointer">
             {% render 'arrow-up' %}
           </div>
         </div>
         <div class="flex items-start justify-start">
           <p class="text-base">{{ block.settings.event_description }}</p>
         </div>
-        <div class="flex items-start justify-start h-auto w-full flex-col gap-y-8 content-images hidden">
-          <div class="w-full h-500 sm:h-600 md:h-700">
-            <img
-              class="w-full h-full object-cover object-center main-img"
-              src="{{ block.settings.event_image | img_url: 'master' }}"
-              alt="{{ block.settings.event_image.alt | escape }}">
-          </div>
-          <div class="w-full h-auto flex flex-row gap-x-2 container-images">
-            {% assign event_images = "event_image_1,event_image_2,event_image_3,event_image_4,event_image_5," | split: ',' %}
-            {% for image in event_images %}
-              {% assign image_url = block.settings[image] | img_url: 'master' %}
-              {% if image_url %}
-                <img
-                  src="{{ image_url }}"
-                  class="object-cover object-center cursor-pointer h-auto"
-                  style="width: calc((100% - (4 * 0.5rem)) / 5); aspect-ratio: 1/1;"
-                  alt="Event Image {{ forloop.index }}">
-              {% endif %}
-            {% endfor %}
+        <div class="content-images hidden">
+          <div class="flex items-start justify-start h-auto w-full flex-col gap-y-8">
+            <div class="w-full h-500 sm:h-600 md:h-700">
+              <img
+                class="w-full h-full object-cover object-center main-img"
+                src="{{ block.settings.event_image | img_url: 'master' }}"
+                alt="{{ block.settings.event_image.alt | escape }}">
+            </div>
+            <div class="w-full h-auto flex flex-row gap-x-2 container-images">
+              {% assign event_images = "event_image_1,event_image_2,event_image_3,event_image_4,event_image_5," | split: ',' %}
+              {% for image in event_images %}
+                {% assign image_url = block.settings[image] | img_url: 'master' %}
+                {% if image_url %}
+                  <img
+                    src="{{ image_url }}"
+                    class="object-cover object-center cursor-pointer h-auto"
+                    style="width: calc((100% - (4 * 0.5rem)) / 5); aspect-ratio: 1/1;"
+                    alt="Event Image {{ forloop.index }}">
+                {% endif %}
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
@@ -64,7 +66,7 @@
 
 
 <script>
- document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
   // Set images selections
   const allImageContainers = document.querySelectorAll('.container-images');
   
@@ -87,20 +89,16 @@
   
   // Set hide/expand section
   const arrows = document.querySelectorAll('.arrow-up');
-
+  
   arrows.forEach((arrow) => {
     arrow.addEventListener('click', () => {
-      const block = arrow.closest('.event-block'); // Trovare il blocco di eventi più vicino
-      const content = block.querySelector('.content-images');
-      const classes = ['flex', 'items-start', 'justify-start', 'h-auto', 'w-full', 'flex-col', 'gap-y-8'];
-      
-      content.classList.toggle('hidden');
-      classes.forEach(cls => content.classList.toggle(cls));
-      arrow.classList.toggle('rotate-180');
+      const block = arrow.closest('.event-block'); // Trova il blocco di eventi più vicino
+      const content = block.querySelector('.content-images'); // Trova il contenuto da mostrare/nascondere
+      content.classList.toggle('hidden'); // Mostra/nasconde il contenuto
+      arrow.classList.toggle('rotate-180'); // Ruota la freccia
     });
   });
-});
-
+  });
 </script>
 
 {% schema %}
