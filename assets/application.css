@@ -1282,6 +1282,14 @@ h5 {
     width: 9rem;
   }
 
+  .md\:min-w-0 {
+    min-width: 0px;
+  }
+
+  .md\:flex-1 {
+    flex: 1 1 0%;
+  }
+
   .md\:overflow-auto {
     overflow: auto;
   }
