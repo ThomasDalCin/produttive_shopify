@@ -1,14 +1,14 @@
+<!-- hero section -->
 <div class="w-full h-dvh relative">
-
+  <!-- hero background -->
   <div class="w-full h-full absolute left-0 top-0 right-0 bottom-0 z-0 brightness-75">
     <img
       class="w-full h-full object-cover"
       src="{{ section.settings.hero_background | img_url: 'master' }}"
       alt="{{ section.settings.hero_background.alt | escape }}">
   </div>
-
-  <div class="w-full h-full  absolute left-0 top-0 right-0 bottom-0 z-10 flex items-end justify-start p-4">
-
+  <!-- hero content -->
+  <div class="w-full h-full absolute inset-0  z-10 flex items-end justify-start p-4 ">
     <div class="flex flex-row w-full h-auto">
       <div class="text-white flex-1">
         <h1 class="text-4xl sm:text-5xl md:text-6xl leading-relaxed">{{ section.settings.hero_heading }}</h1>
@@ -21,9 +21,7 @@
           alt="{{ section.settings.hero_banner_logo.alt | escape }}">
       </div>
     </div>
-    
   </div>
-
 </div>
 
 {% schema %}
