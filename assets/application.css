@@ -1282,6 +1282,10 @@ h5 {
     width: 9rem;
   }
 
+  .md\:overflow-auto {
+    overflow: auto;
+  }
+
   .md\:p-8 {
     padding: 2rem;
   }
