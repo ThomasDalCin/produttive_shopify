@@ -65,11 +65,9 @@
 </div>
 
 
-
-
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Set images selections
+  document.addEventListener('DOMContentLoaded', () => {
+  // Gestione della selezione delle immagini
   const allImageContainers = document.querySelectorAll('.container-images');
   
   allImageContainers.forEach((container) => {
@@ -88,26 +86,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
-  // Set hide/expand section
+  
+  // Gestione dell'espansione e contrazione del contenuto
   const arrows = document.querySelectorAll('.arrow-up');
-
+  
   arrows.forEach((arrow) => {
     arrow.addEventListener('click', () => {
-      const content = arrow.closest('.flex').nextElementSibling; // Trova il div .content-images
+      const block = arrow.closest('.event-block'); // Trova il blocco dell'evento
+      const content = block.querySelector('.content-images'); // Trova il div content-images
       
       if (content.classList.contains('hidden')) {
-        content.classList.remove('hidden'); // Rimuovere la classe hidden per mostrare il contenuto
+        content.classList.remove('hidden'); // Rimuovi la classe hidden per mostrare il contenuto
       } else {
-        content.classList.add('hidden'); // Aggiungere la classe hidden per nascondere il contenuto
+        content.classList.add('hidden'); // Aggiungi la classe hidden per nascondere il contenuto
       }
       
-      arrow.classList.toggle('rotate-180'); // Ruotare la freccia
+      arrow.classList.toggle('rotate-180'); // Ruota la freccia
     });
   });
-});
-
-
+  });
 </script>
 
 {% schema %}
