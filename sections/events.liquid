@@ -27,14 +27,14 @@
               src="{{ block.settings.event_image | img_url: 'master' }}"
               alt="{{ block.settings.event_image.alt | escape }}">
           </div>
-          <div class="w-full h-auto flex flex-row gap-x-2" id="container-images">
+          <div class="w-full h-200 flex flex-row gap-x-2" id="container-images">
             {% assign event_images = "event_image_1,event_image_2,event_image_3,event_image_4,event_image_5," | split: ',' %}
             {% for image in event_images %}
               {% assign image_url = block.settings[image] | img_url: 'master' %}
               {% if image_url %}
                 <img
                   src="{{ image_url }}"
-                  class="h-100 aspect-auto object-cover object-center flex-1 cursor-pointer"
+                  class="aspect-auto object-cover object-center flex-1 cursor-pointer"
                   style="width: calc((100% - (4 * 0.5rem)) / 5)"
                   alt="Event Image {{ forloop.index }}">
               {% endif %}
