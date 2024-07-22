@@ -32,11 +32,11 @@
             {% for image in event_images %}
               {% assign image_url = block.settings[image] | img_url: 'master' %}
               {% if image_url %}
-                <div class="flex-1 relative" style="width: calc((100% - (4 * 0.5rem)) / 5)">
-                  <img src="{{ image_url }}"
-                  class="absolute inset-0 w-full h-full object-cover"
+                <img
+                  src="{{ image_url }}"
+                  class="h-auto aspect-auto object-cover object-center flex-1 cursor-pointer"
+                  style="width: calc((100% - (4 * 0.5rem)) / 5)"
                   alt="Event Image {{ forloop.index }}">
-                </div>
               {% endif %}
             {% endfor %}
           </div>
