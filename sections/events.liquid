@@ -27,7 +27,7 @@
               src="{{ block.settings.event_image | img_url: 'master' }}"
               alt="{{ block.settings.event_image.alt | escape }}">
           </div>
-          <div class="w-full h-auto flex flex-row gap-x-4" id="container-images">
+          <div class="w-full h-auto flex flex-row gap-x-2" id="container-images">
             {% assign event_images = "event_image_1,event_image_2,event_image_3,event_image_4,event_image_5," | split: ',' %}
             {% for image in event_images %}
               {% assign image_url = block.settings[image] | img_url: 'master' %}
