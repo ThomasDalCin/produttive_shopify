@@ -19,11 +19,10 @@
         <div class="flex items-start justify-start">
           <p class="text-base">{{ block.settings.event_description }}</p>
         </div>
-        <div class="flex items-start justify-start h-auto w-full flex-col gap-y-8" id="content-images">
+        <div class="flex items-start justify-start h-auto w-full flex-col gap-y-8 content-images">
           <div class="w-full h-500 sm:h-600 md:h-700">
             <img
-              id="main-img"
-              class="w-full h-full object-cover object-center"
+              class="w-full h-full object-cover object-center main-img"
               src="{{ block.settings.event_image | img_url: 'master' }}"
               alt="{{ block.settings.event_image.alt | escape }}">
           </div>
@@ -65,37 +64,38 @@
 </div>
 
 <script>
-  //set images selections
-   const allImages = Array.from(document.getElementById('container-images').children);
-   const mainImg = document.getElementById('main-img');
-   allImages.forEach((image)=>{
-      image.addEventListener('click', (e) =>{
-        let mainSrc = mainImg.getAttribute('src');
-        let imgClicked = e.currentTarget;
-        let currentSrc = imgClicked.currentSrc;
-        if(mainSrc != currentSrc) {
-           mainImg.setAttribute('src', currentSrc)
-        } 
-      })
-   })
-  
-  //set hide/expand section
-  document.addEventListener('DOMContentLoaded', () => {
-      const content = document.getElementById('content-images');
-      const arrow = document.getElementById('arrow-up');
-  
-      const classes = ['flex', 'items-start', 'justify-start', 'h-auto', 'w-full', 'flex-col', 'gap-y-8'];
-      content.classList.remove(...classes);
-      content.classList.add('hidden');
-  
-      arrow.addEventListener('click', () => {
-        content.classList.toggle('hidden');
-        for(let i = 0; i < classes.length; i++){
-          content.classList.toggle(classes[i])
-        }
-        arrow.classList.toggle('rotate-180');
-      });
+document.addEventListener('DOMContentLoaded', () => {
+  // Set images selections
+  const allImages = Array.from(document.querySelectorAll('.container-images img'));
+  const mainImg = document.querySelector('.main-img');
+
+  allImages.forEach((image) => {
+    image.addEventListener('click', (e) => {
+      let mainSrc = mainImg.getAttribute('src');
+      let imgClicked = e.currentTarget;
+      let currentSrc = imgClicked.getAttribute('src');
+      
+      if (mainSrc !== currentSrc) {
+        mainImg.setAttribute('src', currentSrc);
+      }
     });
+  });
+
+  // Set hide/expand section
+  const arrowUpElements = document.querySelectorAll('#container-images + .w-auto h-auto');
+
+  arrowUpElements.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+      const content = arrow.closest('div').querySelector('.content-images');
+      const classes = ['flex', 'items-start', 'justify-start', 'h-auto', 'w-full', 'flex-col', 'gap-y-8'];
+
+      content.classList.toggle('hidden');
+      classes.forEach(cls => content.classList.toggle(cls));
+      arrow.classList.toggle('rotate-180');
+    });
+  });
+});
+
 </script>
 
 {% schema %}
