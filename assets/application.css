@@ -1128,6 +1128,17 @@ h5 {
   height: 30vh;
 }
 
+.content-images{
+  overflow: hidden;
+  height: 0;
+  transition: height .2s ease;
+}
+
+.open-content{
+  overflow: auto;
+  height: auto;
+}
+
 @media screen and (min-width: 640px) {
   .margin-section {
     margin-bottom: 80px;
