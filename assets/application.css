@@ -1318,6 +1318,10 @@ h5 {
     width: 12rem;
   }
 
+  .lg\:overflow-auto {
+    overflow: auto;
+  }
+
   .lg\:p-10 {
     padding: 2.5rem;
   }
