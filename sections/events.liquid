@@ -94,16 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   arrows.forEach((arrow) => {
     arrow.addEventListener('click', () => {
-      const block = arrow.closest('.event-block'); // Find the closest event block
-      const content = block.querySelector('.content-images'); // Find the content to show/hide
+      const content = arrow.closest('.flex').nextElementSibling; // Trova il div .content-images
       
       if (content.classList.contains('hidden')) {
-        content.classList.remove('hidden'); // Remove hidden class to show content
+        content.classList.remove('hidden'); // Rimuovere la classe hidden per mostrare il contenuto
       } else {
-        content.classList.add('hidden'); // Add hidden class to hide content
+        content.classList.add('hidden'); // Aggiungere la classe hidden per nascondere il contenuto
       }
       
-      arrow.classList.toggle('rotate-180'); // Rotate the arrow
+      arrow.classList.toggle('rotate-180'); // Ruotare la freccia
     });
   });
 });
