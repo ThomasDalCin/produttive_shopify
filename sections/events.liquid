@@ -33,7 +33,7 @@
               {% assign image_url = block.settings[image] | img_url: 'master' %}
               {% if image_url %}
                 <div class="flex-1 relative" style="width: calc((100% - (4 * 0.5rem)) / 5)">
-                  <img ssrc="{{ image_url }}"
+                  <img src="{{ image_url }}"
                   class="absolute inset-0 w-full h-full object-cover"
                   alt="Event Image {{ forloop.index }}">
                 </div>
