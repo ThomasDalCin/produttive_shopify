@@ -1318,6 +1318,10 @@ h5 {
     height: 12rem;
   }
 
+  .lg\:h-800 {
+    height: 800px;
+  }
+
   .lg\:w-32 {
     width: 8rem;
   }
