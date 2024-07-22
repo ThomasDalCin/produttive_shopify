@@ -65,6 +65,7 @@
 </div>
 
 
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
   // Set images selections
@@ -86,19 +87,20 @@
       });
     });
   });
-  
+
   // Set hide/expand section
   const arrows = document.querySelectorAll('.arrow-up');
-  
+
   arrows.forEach((arrow) => {
     arrow.addEventListener('click', () => {
-      const block = arrow.closest('.event-block'); // Trova il blocco di eventi più vicino
-      const content = block.querySelector('.content-images'); // Trova il contenuto da mostrare/nascondere
-      content.classList.toggle('hidden'); // Mostra/nasconde il contenuto
-      arrow.classList.toggle('rotate-180'); // Ruota la freccia
+      const block = arrow.closest('.event-block'); // Find the closest event block
+      const content = block.querySelector('.content-images'); // Find the content to show/hide
+      content.classList.toggle('hidden'); // Toggle the hidden class
+      arrow.classList.toggle('rotate-180'); // Rotate the arrow
     });
   });
-  });
+});
+
 </script>
 
 {% schema %}
