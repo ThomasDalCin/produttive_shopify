@@ -34,7 +34,7 @@
               {% if image_url %}
                 <img
                   src="{{ image_url }}"
-                  class="h-100 object-cover object-center flex-1 cursor-pointer"
+                  class="h-auto aspect-auto object-cover object-center flex-1 cursor-pointer"
                   style="width: calc((100% - (4 * 0.5rem)) / 5)"
                   alt="Event Image {{ forloop.index }}">
               {% endif %}
