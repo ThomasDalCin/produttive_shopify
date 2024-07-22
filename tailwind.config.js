@@ -14,6 +14,7 @@ module.exports = {
         'bg-light': '#F2F0ED'
       },
       height: {
+        '100': '100px',
         '200': '200px',
         '300': '300px',
         '400': '400px',
@@ -47,7 +48,7 @@ module.exports = {
         '60-percent': '60%',
         '70-percent': '70%',
         '80-percent': '80%',
-        '90-percent': '90%'
+        '90-percent': '90%',
       },
       minWidth: {
         '200': '200px',
