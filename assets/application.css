@@ -606,6 +606,10 @@ video {
   position: relative;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .-top-3 {
   top: -0.75rem;
 }
