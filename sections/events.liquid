@@ -5,7 +5,7 @@
 
   {% for block in section.blocks %}
     {% if block.type == 'old_events' %}
-      <div class="w-full h-auto relative bg-bg-light flex flex-col gap-y-4 p-6 sm:gap-y-8 sm:p-8 event-block">
+      <div class="w-full h-auto relative bg-bg-light flex flex-col gap-y-4 p-6 sm:gap-y-8 sm:p-8 content-block">
         <h3 class="absolute right-0 -top-3 text-2xl font-bold uppercase sm:-top-4 heading-custom">Relive our Events</h3>
         <div class="flex items-center justify-start">
           <div class="flex flex-1 h-auto">
@@ -44,7 +44,7 @@
       </div>
 
     {% elsif block.type == 'oncoming_events' %}
-      <div class="w-full h-auto relative bg-bg-secondary flex flex-col gap-y-4 p-6 sm:gap-y-8 sm:p-8 event-block">
+      <div class="w-full h-auto relative bg-bg-secondary flex flex-col gap-y-4 p-6 sm:gap-y-8 sm:p-8">
         <h3 class="absolute right-0 -top-3 text-2xl font-bold uppercase sm:-top-4 heading-custom">Save the date</h3>
         <div class="w-full h-auto flex flex-row gap-x-6 items-start justify-start">
           <div class="flex flex-row gap-x-2 items-center justify-start">
@@ -66,14 +66,12 @@
 
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Gestione della selezione delle immagini
+  //handle replacement on each image
+  document.addEventListener('DOMContentLoaded', () => {
   const allImageContainers = document.querySelectorAll('.container-images');
-  
   allImageContainers.forEach((container) => {
     const allImages = Array.from(container.querySelectorAll('img'));
-    const mainImg = container.closest('.event-block').querySelector('.main-img');
-    
+    const mainImg = container.closest('.content-images').querySelector('.main-img');
     allImages.forEach((image) => {
       image.addEventListener('click', (e) => {
         let mainSrc = mainImg.getAttribute('src');
@@ -86,14 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
-  // Gestione dell'espansione e contrazione del contenuto
+  
+  //handle height of images gallery container
   const arrows = document.querySelectorAll('.arrow-up');
-
   arrows.forEach((arrow) => {
     arrow.addEventListener('click', () => {
-      const block = arrow.closest('.event-block'); // Trova il blocco dell'evento
-      const content = block.querySelector('.content-images'); // Trova il div content-images
+      const block = arrow.closest('.content-block');
+      const content = block.querySelector('.content-images');
       
       // Verifica se il contenuto è visibile o nascosto
       if (content.classList.contains('hidden')) {
@@ -103,13 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.add('hidden'); // Aggiungi la classe hidden per nascondere il contenuto
         content.classList.remove('flex'); // Rimuovi la classe flex
       }
-      
-      // Ruota la freccia
       arrow.classList.toggle('rotate-arrow');
     });
   });
-});
-
+  });
 </script>
 
 {% schema %}
