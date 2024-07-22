@@ -18,7 +18,7 @@
         <div class="flex items-start justify-start">
           <p class="text-base">{{ block.settings.event_description }}</p>
         </div>
-        <div class="content-images hidden">
+        <div class="content-images close-content">
           <div class="flex items-start justify-start h-auto w-full flex-col gap-y-8">
             <div class="w-full h-500 sm:h-600 md:h-700">
               <img
@@ -93,11 +93,11 @@
       const content = block.querySelector('.content-images');
       
       // Verifica se il contenuto è visibile o nascosto
-      if (content.classList.contains('open-content')) {
-        content.classList.remove('open-content'); // Rimuovi la classe hidden per mostrare il contenuto
+      if (content.classList.contains('close-content')) {
+        content.classList.remove('close-content'); // Rimuovi la classe hidden per mostrare il contenuto
         content.classList.add('flex'); // Assicurati che il contenuto sia visibile con flex
       } else {
-        content.classList.add('open-content'); // Aggiungi la classe hidden per nascondere il contenuto
+        content.classList.add('close-content'); // Aggiungi la classe hidden per nascondere il contenuto
         content.classList.remove('flex'); // Rimuovi la classe flex
       }
       arrow.classList.toggle('rotate-arrow');
