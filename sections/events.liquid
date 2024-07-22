@@ -66,8 +66,9 @@
 
 
 
+
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Set images selections
   const allImageContainers = document.querySelectorAll('.container-images');
   
@@ -95,11 +96,18 @@
     arrow.addEventListener('click', () => {
       const block = arrow.closest('.event-block'); // Find the closest event block
       const content = block.querySelector('.content-images'); // Find the content to show/hide
-      content.classList.toggle('hidden'); // Toggle the hidden class
+      
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden'); // Remove hidden class to show content
+      } else {
+        content.classList.add('hidden'); // Add hidden class to hide content
+      }
+      
       arrow.classList.toggle('rotate-180'); // Rotate the arrow
     });
   });
 });
+
 
 </script>
 
