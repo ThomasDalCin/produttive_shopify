@@ -1326,6 +1326,14 @@ h5 {
     width: 12rem;
   }
 
+  .lg\:min-w-0 {
+    min-width: 0px;
+  }
+
+  .lg\:flex-1 {
+    flex: 1 1 0%;
+  }
+
   .lg\:overflow-auto {
     overflow: auto;
   }
