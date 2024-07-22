@@ -66,7 +66,7 @@
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Gestione della selezione delle immagini
   const allImageContainers = document.querySelectorAll('.container-images');
   
@@ -86,25 +86,30 @@
       });
     });
   });
-  
+
   // Gestione dell'espansione e contrazione del contenuto
   const arrows = document.querySelectorAll('.arrow-up');
-  
+
   arrows.forEach((arrow) => {
     arrow.addEventListener('click', () => {
       const block = arrow.closest('.event-block'); // Trova il blocco dell'evento
       const content = block.querySelector('.content-images'); // Trova il div content-images
       
+      // Verifica se il contenuto è visibile o nascosto
       if (content.classList.contains('hidden')) {
         content.classList.remove('hidden'); // Rimuovi la classe hidden per mostrare il contenuto
+        content.classList.add('flex'); // Assicurati che il contenuto sia visibile con flex
       } else {
         content.classList.add('hidden'); // Aggiungi la classe hidden per nascondere il contenuto
+        content.classList.remove('flex'); // Rimuovi la classe flex
       }
       
-      arrow.classList.toggle('rotate-180'); // Ruota la freccia
+      // Ruota la freccia
+      arrow.classList.toggle('rotate-180');
     });
   });
-  });
+});
+
 </script>
 
 {% schema %}
